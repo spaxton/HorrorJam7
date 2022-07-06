@@ -1,6 +1,6 @@
 VAR trust = 5
 
--> story_select
+-> intro
 
 === story_select ===
 Select a story to play.
@@ -18,29 +18,45 @@ Author: Seth Paxton
 
 Description: A wild dog in the woods runs across a group of ill-fated campers.
 
-TW: Gore, Animal Cruelty
+CW: Gore, Animal Cruelty
 Time: 10 Minutes
-    + Play
-    -> intro
-    + Back
-    -> story_select
+
+-> DONE
 
 === intro ===
 Cassie is a bad dog.
 
-Cassie loves living in the woods, and people love it too because Cassie is a bad dog. She barks at children and scares them. She steals food from picnic tables. Cassie poops wherever she wants because Cassie is a bad dog.
+Cassie loves living in the woods and doing things only bad dogs get to do. She barks at children. She steals from picnics. Cassie poops wherever she wants because Cassie is a bad dog.
 
 + [Continue]
 
-- Cassie catches the scent of dried meat, sweat, and stale beer. Campers. She lopes along finding signs like broken glass, broken branches, and candy wrappers. 
+- One day, as Cassie is playing in leaves, she catches the scent of dried meat, sweat, and stale beer. Campers. She lopes along finding signs like broken glass, broken branches, and candy wrappers. 
 
-Cassie eats a candy wrapper and savors the salty plastic, then she throws it up. Her stomach growls. 
+Cassie eats a candy wrapper and savors the salty plastic, then she throws it up. Her stomach growls. It reminds Cassie of where she used to live: in the dark, hungry, on a chain. But now she lives in the woods, and no one hits her.
 
-Meet some campers
++ (greet)[Go say hello]
++ (sneak)[Sneak up behind the campers]
+    Of course Cassie doesn't run right up to the campers, only good dogs trust humans. She slips behind them (which is easy, humans cannot smell and their sight is limited to only a few feet in front of them) and sees what they're about.
+    
+    ++ [Continue]
+    -- 
++ (wait)[Get ahead of the campers and wait]
 
-+ [Continue]
+- There are two campers, one in blue and one in yellow-brown, and they both smell like sweat and beer. The yellow-brown one has hair on its face (not all humans have this) which carries the sweet smell of meat.
+    
+    Cassie begins to plan. A{greet:n adorable}{sneak: sneaky}{wait: patient}, devious plan. 
 
-- Cassie gets the campers to trust her
++ [Get that meat]
+
+- {greet: }{sneak: Cassie takes the clever way, she avoids meat-hair-face and begins to walk ever closer to the blue human until it notices her arrival.}{wait: }
+
+"Aww! <something something> dog! Isn't she just so cute? <something something> owner?" The blue human was a good choice: it doesn't know Cassie is a bad dog.
+
+The yellow-brown human says it doesn't like Cassie. It jealously guards its meat. "<something something> wild. No collar <something something> leave it alone."
+
+Cassie will have to <>
+
++ get creative.
 >>>show_trust()
 
 -(trust_loop)
@@ -64,6 +80,8 @@ Your trust level is {trust}.
 + {trust >= 10} Steal the hotdog
     ~trust = 0
     Your trust level is {trust}.
+    
+    
     Cassie runs away with the hotdog because Cassie is a bad dog! <>
 
 - Cassie loves being a bad dog.

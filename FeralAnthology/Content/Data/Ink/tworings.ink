@@ -1,8 +1,13 @@
 
--> title
-=== title ===
-<h3>Two Rings<h3>
-A Horror Tale by Jeff Harman
+-> description
+=== description ===
+Two Rings
+Author: Jeff Harman
+
+Description: A newly-wed couple can't escape tragedy when a werewolf visits their summer cabin.
+
+CW: Gore, violence.
+Time: 4 minutes.
 
 + Start
 ->opening
@@ -17,7 +22,12 @@ The hero of our story, let's call him Ron, sat by the wood fire with his lovely 
 - "It's so lovely out here. The full moon especially." Natalie stated wistfully.
 "Best with you, hon." Ron replied.
 "Aw, you're too much."
-She fiddles with her wedding ring.
+Ron sat back.
+"Someone local told me that this is werewolf ground."
+"Werewolves?"
+"No joke, he said. One good bite transforms the victim into a wolf beast that very night."
+"Ha ha."
+She fiddled with her wedding ring.
 
 +[Continue]
 - A scream sounded out, clearly human but from far away outside.
@@ -34,14 +44,14 @@ Natalie stood up, rushed to the cabin door.
 - Ron followed his wife outside. The forest was dead still.
 "I told you, it's nothing."
 Natalie looked into his eyes.
-"I don't think so," she asserted.
+"I don't think so." she asserted.
 
 Another scream, louder, to the east.
 
 "That came from the next cabin!" Natalie interjected.
 "You don't know that."
 
-Natalie runs inside, immediately returns with her coat.
+Natalie ran inside, immediately returned with her coat.
 "Where are you going?" Ron asked, realizing what she intended to do.
 "If they are in trouble, I can't live with doing nothing."
 
@@ -50,12 +60,20 @@ Natalie runs inside, immediately returns with her coat.
 
 === response_1 ===
 
+"Natalie, you don't know what's out there. I get it, cops live to help, but you're off duty."
 Natalie frowned, "Ron, I need to do this. I'll be back."
+She took a flashlight, hurried out the door.
+
++[Later that night]
     -> Later_that_night
 
 === response_2 ===
 
-"We'll see what happens." Natalie responded.
+"Good on you. Do you need any help?" Ron queried. 
+"I'm good. I've got my cellphone if I need to call you." Natalie responded.
+She took a flashlight, hurried out the door.
+
++[Later that night]
     -> Later_that_night
     
 === Later_that_night ===
@@ -75,7 +93,8 @@ The moon was high above.
 
 +[Continue down the trail]
 
-- Ron realized he must've been close to the nearby cabin.
+- Ron realized he must've been close to the nearby cabin. 
+The forest was dead still.
 RAWR!
 A wolf-beast, standing on two legs, leapt out of the trees.
 Ron raised his {Later_that_night.machete: machete}{Later_that_night.axe: axe}{Later_that_night.sledgehammer: sledgehammer}, but the beast knocked him off his feet!
@@ -83,6 +102,8 @@ The beast leered at him, noticed the wedding ring. It sniffed at the ring.
 
 Ron grabbed the weapon, swung at the beast, landed a hit.
 It howled at the moon!
+The beast backed up, whimpered as it glanced at the wound.
+Ron shoved himself upright, sprinted away.
 
 +[Run away]
     -> Back_at_the_cabin
@@ -92,11 +113,11 @@ It howled at the moon!
 - The werebeast was hot on his trail.
 Ron made it back to the cabin, slammed the door shut. 
 
-*   (chair) Barricade_the_door
-*   (bed) Barricade_the_door
+*   (chair) Shove the chair under the door knob
+*   (bed) Shove the bed into the doorframe
 
 - Ron barricaded the door with {chair: chair}{bed: bed}, but he knew it wouldn't hold forever. Whatever that creature was, it had strength.
-In the meantime, Ron found a first aid kit and patched himself up. The creature snarled outside.
+In the meantime, Ron found a first aid kit, checked himself for injuries. The creature snarled outside.
 RING!
 Ron's cellphone!
 Ron found it under a pillow, answered it.
@@ -144,7 +165,7 @@ Ron rushed to the blocked door, cleared the {Back_at_the_cabin.chair: chair}{Bac
 The beast HOWLS!
 Ron backed up, noticed something under the porch.
 A beartrap, rusty and potent.
-Ron grabs the trap.
+Ron grabbed the trap.
 
 *   [Set the trap on the porch] -> The_wolf_is_trapped
 *   [Set the trap by the crawlspace] -> The_wolf_is_trapped_two
@@ -152,32 +173,32 @@ Ron grabs the trap.
 === The_wolf_is_trapped ===
 
 - Ron spread the trap wide on the porch.
-He backed up, hefted the {Later_that_night.machete: machete}{Later_that_night.axe: axe}.
+He backed up, hefted the {Later_that_night.machete: machete}{Later_that_night.axe: axe}{Later_that_night.sledgehammer: sledgehammer}.
 The door crumpled, and the beast landed in the trap.
 It HOWLED, as if it knew the chase was up.
 And Ron knew this to be true.
 
-    *   [Hack the creature to death] -> The_wolf_dies_one
+    *   [Kill the creature] -> The_wolf_dies_one
     *   [Let it bleed] -> The_wolf_dies_two
 
 === The_wolf_is_trapped_two ===
 
 - Ron spread the trap wide by the crawlspace.
-He backed up, hefted the {Later_that_night.machete: machete}{Later_that_night.axe: axe}.
+He backed up, hefted the {Later_that_night.machete: machete}{Later_that_night.axe: axe}{Later_that_night.sledgehammer: sledgehammer}.
 The beast crawled out from the crawlspace, right into the trap.
 It HOWLED, as if it knew the chase was up.
 And Ron knew this to be true.
 
-*   [Hack the creature to death] -> The_wolf_dies_one
+*   [Kill the creature] -> The_wolf_dies_one
 *   [Let it bleed] -> The_wolf_dies_two
 
 === The_wolf_dies_one ===
 
 - Finally, the ordeal was over.
-Ron threw the {Later_that_night.machete: machete}{Later_that_night.axe: axe} away, almost smiled at what he had accomplished.
+Ron threw the {Later_that_night.machete: machete}{Later_that_night.axe: axe}{Later_that_night.sledgehammer: sledgehammer} away, almost smiled at what he had accomplished.
 Then something started to happen.
 The creature's remains morphed, changed. It shrunk, shed its fur.
-And in seconds, what was once a beast was now Ron's wife Natalie, still bloodied and gored, and very much dead.
+And in seconds, what was once a beast was now Ron's wife Natalie, still bloodied and gored, and very much dead. Something had bitten her neck.
 Ron fell to his knees.
 "Ron? Are you Ron?"
 Ron turned to the dirt road leading away from the cabin.
@@ -194,7 +215,7 @@ Finally, the beast expired.
 Ron sighed, for he was finally safe.
 Then something started to happen.
 The creature's remains morphed, changed. It shrunk, shed its fur.
-And in seconds, what was once a beast was now Ron's wife Natalie, having bled out from the trap.
+And in seconds, what was once a beast was now Ron's wife Natalie, having bled out from the trap. Something had bitten her neck.
 Ron's jaw dropped.
 "Ron? Are you Ron?"
 Ron turned to the dirt road leading away from the cabin.

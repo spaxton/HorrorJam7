@@ -21,21 +21,28 @@ VAR enemy = ""
             ~ enemy = ""
         - MOVIES:
 TODO
-            ~ channelname = "MOVIE CHANNEL"
+            ~ channelname = "Netflix and Chill the Fuck Out"
             ~ fanname = "MOVIE FANS"
             ~ enemy = ""
     }
 
 
+=== description === 
+Title: No Such Thing as an Alpha
+Author: Ghost Clown
+
+Description: When a YouTuber makes a harmles joke about an "alpha male" streamer
+
+CW: Misogyny, stalking, violence
+
+Time:
+
+-> DONE
 
 === start ===
-
-TW: Misogyny, stalking, violence
-
-* Cool -> true_start
-
-== true_start
 Once upon a time, there was a YouTuber. She made videos where she would do her makeup while talking about...
+
+Well, what do you think?
 
  * [Fandom drama] 
     ~ channeltype = FANDOM
@@ -46,16 +53,16 @@ Once upon a time, there was a YouTuber. She made videos where she would do her m
  * [Cryptids] 
     ~ channeltype = CRYPTIDS
     ->after_choice
-* [Movies]
+* [TV & movies]
     ~ channeltype = MOVIES
     ->after_choice
 
 = after_choice
 {set_channel_vars(channeltype)}
 
+That's right. And she was just starting on a new video...
 
-
-"Hey everybody! Welcome back to {channelname}!"
+"Hey everybody! Welcome back to {channelname}!
 
     { channeltype:
         - FANDOM:
@@ -92,14 +99,24 @@ Once upon a time, there was a YouTuber. She made videos where she would do her m
 
 = cryptids
 "Good evening to all the cryptids and cryptid lovers out there! Can you guess which creature of the night we're going to be talkinng about today? I'll give you a hint... it's a full moon out tonight.
-"That's right! Today we're gonna talk about... <i>awooo!</i> Werewolves! Do we have any Team Jacob people out there? Don't be shy! I can't say I see the appeal myself, but I know some of you love a big, stinky 'alpha' and all monsterfuckers are valid here!
+"That's right! Today we're gonna talk about... AWOOOO! Werewolves! Do we have any Team Jacob people out there? Don't be shy! I can't say I see the appeal myself, but I know some of you love a big, stinky 'alpha' and all monsterfuckers are valid here!
 "Although, I gotta say:
 
 -> after_video
 
 
 = movies
-TODO
+"So, what's the topic of today's video? Well, I appreciate this fandom, and I always read through your comments and suggestions. But sometimes, just for funsies, I like to do something that absolutely no onre requested. Today is one of those days. And that's why we're about to  talk about Teen Wolf!
+
+"And no, this isn't about Sterek. Y'all already know my hot take on that one."
+
+She paused for a moment, giving herself space to edit in a funny sound effect or graphic later.
+
+"In fact, that's not even the right Teen Wolf. Instead, I wanted to deep dive into the 1985 Michael J. Fox coming-of-age film, where the magic miracle of wolf puberty solves all of a boy's problems. It's kind of like the exact inverse of Ginger Snaps.
+
+"Come to think of it, that's not a bad idea for a later video, is it? Note to self: Do a video about the gender politics of werewolves. Why do boys turn into 'alphas' and girls become 'monsters'?
+
+"Anyway! Before I get into it, there's a fun fact I want to share...
 
 -> after_video
 
@@ -107,19 +124,28 @@ TODO
 "There's no such thing as an alpha wolf.
 "Seriously! Did you know that? The original wolf study where that term was coined was performed under really artificial conditions, and the researcher basically retracted his findings years later. Under normal cirucmstances, wolves  live in loving family packs -- sorry-not-sorry, Mark Territory."
 
-* ["Mark Territory?"] ->whoismark
+* [Who's "Mark Territory?"] ->whoismark
 
 
 =whoismark
-Mark Territory was an infamous "alpha male" streamer with about ten times as many followers as the YouTuber. It never occurred to her that he might even notice her little joke, let alone care enough to take offense. After some more recording and editing, she uploaded her video, silenced her phone as she always did, and went to bed.
+Mark Territory was an infamous "alpha male" streamer with about ten times as many followers as the YouTuber. It never occurred to her that he might even notice her little joke, let alone care enough to take offense. She didn't think anything of it at all.
 
-By the time she woke up, her phone was flooded with notifications -- emails, DMs, even a missed call from her best friend. Feeling overwhelmed, she hardly knew where to start...
+And so, in the last moments of peaceful oblivion that she would have for some time, she finished recording her video, edited it, and uploaded it. At that point it had been a very long day, so after checking to see that her video had published without issue, she silenced her phone and climbed into bed.
 
-* [She returned the call.] ->phoneafriend
+* [Sweet dreams.] -> sweetdreams
+
+=sweetdreams
+
+The next morning, the YouTuber woke up to her sleep app's alarm screeching at her. Drowsily, she grabbed the phone to silence it. It was then that she saw that the screen had been flooded with notifications.
+
+
+When the YouTuber woke up the next day, she found her phone flooded with notifications. There were emails, DMs, even a missed call from her best friend. Feeling overwhelmed, she hardly knew where to start...
+
+* [Definitely return that call.] ->phoneafriend
 
 =phoneafriend
 
-That's right. She called up her best friend.
+She called up her best friend.
 
 "Oh honey, I'm so sorry," her friend said before even a hello.
 
@@ -128,22 +154,24 @@ That's right. She called up her best friend.
 "I've only seen that my phone blew up overnight."
 ->seeforyourself
 
-* "I haven't looked at any of it yet."
+* "So I haven't actually looked at any of it yet."
 "Oh."
-"What happened?"
+"Don't 'oh' me! What happened?"
 
 ->seeforyourself
 
 =seeforyourself
-"You know the video you made last night?"
+"Well... you know the video you made last night?"
 
-"You should see this for yourself. Go to Mark Territory's channel. I'll stay on the line."
+"Yeah..."
 
-Numbly, the YouTuber opened up her laptop and navigated to the channel. Right there in the featured section was a thumbnail featuring her own face. Right next to it was Mark Territory, making an over-the-top grimace. The video's title read, "No such thing as an alpha!?"
+"Actually, you should see this for yourself. Go to Mark Territory's channel. I'll stay on the line."
+
+Numbly, the YouTuber opened up her laptop and navigated to Territory's channel. Right there in the featured section was a thumbnail featuring her own face, captured at an unflattering moment. Right next to it was Mark Territory's face, frozen in an over-the-top grimace. The video's title read, "No such thing as an alpha!?"
 
 "Oh goddamn it," she muttered to herself.
 
-* [She's gotta watch that video.] ->watchmark
+* [Watch the video.] ->watchmark
 
 =watchmark
 
@@ -159,18 +187,31 @@ The YouTuber watched as her own video filled the screen. Territory's smug, green
 
 Mark pretended to snore through most of the opening.
 
-"Man, this chick is boring!"
+{channeltype == MOVIES: "Man, this chick is boring! It's like she's draining the life out of me!"}
+{channeltype == FANDOM: "What the fuck is she even talking about? She sounds like a squawking bird."}
+{channeltype == CRYPTIDS: "Cryptids, huh? I've got some hentai she might like..."}
+{channeltype == ENVIRONMENT: "Does anybody actually watch this? It feels like sludge being dripped directly into my brain."}
 
-But once he was past her little joke about him, he became a lot more interested.
 
-"Do you see what she's doing here? She's trying to leverage my clout to boost her own. Let's pause the video for a second. Chat, how would you rate her based on this image? Be honest, now."
+But once he hit the part where she made a joke about him...
 
-The chat window flooded with numbers.
+* [I'll bet he became a lot more interested.] -> moreinterestedmark
+
+= moreinterestedmark
+
+He became significantly more interested.
+
+"Do you see what she's doing here, calling me out like that? She's trying to leverage my clout to boost her own. 
+
+"Let's pause the video for a second. Chat, how would you rate her based on this image? Be honest, now."
+
+The chat window quickly filled with numbers.
 
 "Looks like we're seeing a lot of 8s. So now we know why anybody would watch this. This girl could be talking about paint drying and she'd still be crawling with simps. But I guarantee you, if I brought it back to the beginning of the video, before the makeup went on, those numbers would be cut in half. This is what females do -- disguse themselves as something they aren't.
 "Personally, I think she overdid it. This isn't your normal, everyday makeup. It's attention-seeking makeup. What do I always say? If your woman is wearing too much makeup, she's cheating."
 
-* [Gross.]->pausevideo
+* [Stop watching]->pausevideo
+* [Keep watching]->keepwatching
 
 =pausevideo
 
@@ -178,9 +219,26 @@ Disgusted, the YouTuber stopped the video.
 
 "Well, that's about what I expected," she said.
 
-"That isn't all," said her friend. "Skip to the end. Around the 20 minute mark."
+"That isn't all," said her friend. "Skip to the end, around the 20 minute mark."
 
-With a tired resignation, the YouTuber clicked to the time as instructed.
+"Can't you just tell me?"
+
+"I can, but I know you and I know you'll eventually watch it anyway. You may as well get it over with while I'm here with you."
+
+The YouTuber felt a bit called out, but could not argue the point.
+
+->skiptotheend
+
+=keepwatching
+Her friend said, "He's just going to rant a while. Skip to the end, around the 20 minute mark."
+
+The YouTuber always had difficulty looking away when she knew people were talking shit about her, but she trusted her friend's judgment on this one.
+
+->skiptotheend
+
+=skiptotheend
+
+With a tired resignation, she clicked to the time as instructed. Once more, Mark Territory's voice filled the room.
 
 "-but look, if she really wants to try and prove me wrong, I see she's going to be at VidCon next week. I'm going to be at VidCon next week. You think she has the guts to do a collab? Yeah, I don't think so either."
 
@@ -192,7 +250,15 @@ The YouTuber looked at her still-growing DM count. Mystery solved.
 
 "You're not going to do it, are you?"
 
-"No way in hell. I'm not giving that asshole the time of day."
+* "No."
+    ->nowayjose
+* "No way in hell."
+    ->nowayjose
+* "Over my dead body and preferably also his."
+    ->nowayjose
+
+
+== nowayjose
 
 "Good. Hey, I've got to go, but take care of yourself, okay? Let me know if you need to get out of the hou for a while."
 
