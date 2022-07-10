@@ -40,14 +40,13 @@ VAR open_window = false
 
 VAR reveal_bite = false
 
+VAR sam_visits = false 
+
+VAR phone_unplugged = false 
+
+VAR footprints_discovered = false
 
 
-// I need a fear/rage loop somewhere for the whole story... also need to create a 'batch' or something for all the locks / unlocks... Oh, hallucinations need to be figured out.
-
-// Need trigger warnings.
-//radio 
-
-//Awoken by loud banging on door ,Conversation through door, (Feral/ someone scary/ someone shouting and being dragged away if locked/ if not locked)
 
 
 -> title
@@ -60,27 +59,27 @@ VAR reveal_bite = false
 
 === description ===
 
-Title: Hollow
+Title: Working Title
 Author: Gloomy
 
 Description:
-TW: Violence, Gore
+TW: Violence, Gore, animal cruelty, stalking, suicidal ideation?
 Time:
 
 ->DONE
 
 === title ===
-<center><h1> Hollow </h1></center>
-
-//need variables for water, read now, bite, lock, unlock all bolts, if any part of the door is relocked variable if the door is unlocked she will be able to quickly get out to sprint into the hallway, if not it will be considerably more difficult to escape / list of noises /sound effects 
+<center><h1> Hollow (placeholder title)
 
 
-* Unlock
+* [Unlock]
 -> opening
+
+
 
 === opening ===
 
-#mood:bleak
+//mood:bleak
 
 Wind and snow howl in the night. She rushes not to hurry inside.
 
@@ -120,9 +119,9 @@ Abaddon Management </i>
 
 She holds the letter tightly and looks at the door.
 
-* Unlock the door
+* [Unlock the door]
 -> unlock
-* Don't unlock the door 
+* [Don't unlock the door] 
 -> do_nothing
 
 = read_later
@@ -246,11 +245,11 @@ She must look away. She looks away. First, something to temper the occasion.
 
 = beverages 
 
-* tea 
+* [tea ]
 -> tea
-* water 
+* [water ]
 -> water
-* alcohol 
+* [alcohol ]
 -> alcohol
 
 //Now fill this shit in with actual tea stuff later.
@@ -261,15 +260,15 @@ She starts the kettle and looks through the cabinet at the assortment of teas, l
 
 //look up tea shit for fucks sake
 
-* white
+* [white]
 The white tea is good. 
 -> open_letter
 
-* black
+* [black]
 The black tea is better
 -> open_letter
 
-* green
+* [green]
 Something something
 
 # tranquility
@@ -322,28 +321,28 @@ There is a single page inside, folded three times, the edges crisp. The paper is
 She takes a long, slow breath and swallows, unfolding the letter.
 
 
-* Read Letter
+* [Read Letter]
 -> read_letter
 
 = read_letter
 
 ~ raise(afraid)
 
-Two words, typed. She notices that before she's able to read them.
+Two words, typed. She notices that before she's able to read them:
 
-<i><b> Found you. :) </i></b>
+Found you. :) 
 
 
 //variables here: if alcohol have a long drink, if doors left unlocked after reading, prompt to relock the door, if letter from management unread, offer to lock door 
 
 
-* Look out the window //this will point to snow and fresh tracks outside the window
+* [Look out the window] //this will point to snow and fresh tracks outside the window
 -> look_out_window
 
-* Look at the door 
+* [Look at the door] 
 -> look_at_door
 
-* This is fine
+* [This is fine]
 -> its_fine
 
 
@@ -404,11 +403,11 @@ She swings her legs over the side of the bed, rubbing her eyes, scratching her a
 
 "Hey, you. It's Sam. Gah, sorry. I hope you recognize my voice by now. Anyway, I was hoping you'd be in by this time. I've been thinking about you and you know, everything. How's the bite? Call me."
 
-* Call Sam
+* [Call Sam]
 // does this need to be a choice? 
     -> callsam
     
-* Don't call Sam
+* [Don't call Sam]
     -> dontcall
     
 = dontcall
@@ -435,7 +434,7 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
      
      She enters Sam's number. She knows it by heart. Her fingers turn the dial, each number whirring back to zero each time. It rings. And rings. A hard thud from the right side of the room. She's ready to hang up when the call is picked up. Sam's voice is on the other end, tentative.
      
-     * [Sam picks up.] ->sampicksup
+     * Sam picks up. ->sampicksup
      
      =sampicksup
      
@@ -551,7 +550,7 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         
         =hatesthis
         
-        She lowers her voice. "You have to be careful with that. I've told you before. Please get rid of that thing." She's seen the contraption. Some metal box with wires and lighbulbs, always swiftly stowed away when there are inspections.
+        She lowers her voice. "You have to be careful with that. I've told you before. Please get rid of that thing." She's seen the contraption. Some metal box with wires and lightbulbs, always swiftly stowed away when there are inspections.
         
         "How else would we know what's going on?"
         
@@ -606,7 +605,7 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         
         = callcontinued
         
-        "Okay," Sam says, sounding tired. "I appreciate the call back. Keep up the good fight?"
+        "Okay," Sam says, sounding tired. She realizes she's pushing someone else away. "I appreciate the call back. Keep up the good fight?"
         
         She almost smiles. "Right. But I wasn't kidding. Get rid of that radio."
         
@@ -651,7 +650,7 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
      
      "What did it say?" Sam insists.
      
-  * [ "It said..." ] ->itsaid
+  *  "It said..."  ->itsaid
   
   =itsaid
      
@@ -844,17 +843,31 @@ They were not allowed to deviate from the path. But what if a child had been aba
   
 * [Something is coming] -> somethingiscoming
 =somethingiscoming
-  
-A force knocked into her, tossing her onto her back. She stared into the void of night, winded, before a sting roused her from her fugue. The pain was surprising. She thought she had numbed to pain but it tested her as jaws clamped more tightly, fangs sinking into her flesh, sharp and bright. Her white coat darkened and the icy cold started to fade. Her eyes fought to focus. Understanding did not come right away.
 
-A fox, frothing at the mouth, its teeth, saliva, tinged red.
+Steps padded closer and then she saw it.
+
+Oh. Sweet relief.
+
+A white fox. 
+
+They stared at one another, transfixed. She'd never seen a fox in person. It was bigger than she thought.
+
+The fox snarled. It took one step toward her and then another. 
+
+She froze.
+
+It moved closer, picking up speed until it was at a fast sprint, knocking into her, tossing her onto her back. 
+
+She stared into the void of night, winded, before a sting roused her from her fugue. The pain was surprising. She thought she had numbed to pain but it tested her as jaws clamped more tightly, fangs sinking into her flesh, sharp and bright. Her white coat darkened and the icy cold started to fade. Her eyes fought to focus. Understanding did not come right away.
+
+The fox frothed at the mouth, its teeth, saliva, tinged red.
 
 No, she thought she said, but she couldn't scream.
 
 * [Try to escape] ->trytoescape
 =trytoescape
 
-It growled as she tried to pull her arm back. She'd never seen a fox in person. It was bigger than she thought. Stronger than she thought. She tried to scramble back but her arm only buried in the snow, going numb. 
+It growled as she tried to pull her arm back.  It was stronger than she thought. She tried to scramble back but her arm only buried in the snow, going numb. 
 
 The fox shook its head furiously and she jostled, made a sound before her gloved fingers curled, smashing into the side of the fox. She waited to be released but the fox didn't react. 
 
@@ -918,13 +931,58 @@ It's hard to breathe.
 
 Another quick glance to the window reveals nothing. 
 
+* [Leave it] 
+-> leavewindowalone
+
 * Open the window to be sure 
 -> openwindow
 
-* Leave it 
--> leavewindowalone
 
-=openwindow
+===leavewindowalone=== 
+
+She leaves the window alone. 
+
+She won't let paranoia get to her. 
+
+One thought breeds another until she's spiraling. She can't be like that anymore. How is she always a captive to herself? She sits on the bed and tries to calm herself.
+
+She has discovered old books, swollen with rain and humidity, covers of smiling men and women faded away. "How to be your best self", that kind of thing. 
+
+She never found the advice within to be helpful. It's as if it was made for another world. Another kind of being. 
+
+* There's a knock at the door.
+
+-> knock_at_door1
+
+= knock_at_door1
+
+//if she's read the letter she can ask specifically about maintenance, if not, she only has the weird stalker letter to go off of
+
+She rises from the bed.
+
+"Hello?"
+
+The knock comes again. 
+
+
+
+
+* [Go to door] -> go_to_door1
+//these are not ready yet
+= go_to_door1
+
+-> the_end
+
+* [Ignore door] -> ignore_door
+//these are not ready yet
+
+= ignore_door
+-> the_end
+
+
+
+
+===openwindow===
 
 ~ open_window = true
 
@@ -937,17 +995,48 @@ Her eyes adjust in the darkness. She does a quick scan of the fire escape and th
 
 * Close window -> dontlook_closewindow
 
+= dontlook_closewindow
+
+That's enough. She won't chase shadows.
+
+She leaves the window alone. 
+
+She won't let paranoia get to her. 
+
+One thought breeds another until she's spiraling. 
+
+She closes the window and exhales.
+
+Things have felt strange the past couple of days. As if the ground beneath her were shifting. As if something deeper were changing. The letter has her unnerved. She's overreacting. 
+
+At least, that's what she's always been told. It hurt her at the time to hear it but now, more than ever, she wants to believe it.
+
+She sits on the bed, hand absently beneath her pillow, searching. 
+
+She draws them back and flexes her fingers. When did her nails get so long? 
+
+They called her the runt of the litter. 
+
+She's not like us, they said. Leave her.
+
+Her nose twitches.
+
+* [ There's a knock at the door.] -> knock_at_door
+
+
 = stick_neck_out
+
+~ footprints_discovered = true
 
 She braces herself, settling her hands at the bottom of the window and leaning out. Street lamps pulse a sickly yellow color, seeming to beat in tandem with her heart.
 
 She cranes her neck up. The steps to the fire escape are stacked with several inches of snow. 
 
-It's fine.
+It's fine. If she says it over and over again it'll be true. If she has definitive proof before her eyes, it has to be true. 
 
 A tuft of snow splats just in front of her.
 
-Shaky breath. Her own. It's fine.
+Shaky breath. Her own. It's fine...?
 
 A purr. A rumbling, building, deepening, becoming a growl. Her eyes land beneath her window. Deep footprints. 
 
@@ -981,6 +1070,9 @@ The knock persists.
 
 * [Go to the door] -> go_to_door
 
+= go_to_door
+->postdoor
+
 =ask_again
 
 "Who is it?" She asks again. Her voice shakes. Her palms are sweating. The room is hot. 
@@ -1005,9 +1097,11 @@ There's movement outside the door. She looks down and sees a shadow seeping bene
 
  It's not Sam.
  
- The voice is casual, as if there weren't a door between them, as if they were expected. She tries to place it but can't. She doesn't answer.
+ The voice is casual, as if there weren't a door between them, as if they were expected. She tries to place it but can't. She doesn't answer and hopes they will go away.
 
-The doorknob jiggles. The air goes out of her. She takes a step back.
+The doorknob jiggles. 
+
+The air goes out of her. She takes a step back.
 
 "You in there?" 
 
@@ -1017,9 +1111,11 @@ The doorknob jiggles again.
 
 = grab_doorknob
 
-Instinct kicks in and she lunges forward, taking hold of the doorknob. It slips in her sweaty palms and she tightens her grip to prevent it from turning, pressing her shoulder to the door. She can't remember the last time she exerted so much force. Sweat beads on her brow. There's a whine like a desperate gasp. It's her.
+Instinct kicks in and she lunges forward, taking hold of the doorknob. 
 
-The resistance of the door finally gives way and she slams into the wall breathing hard. She tentatively loosens her hold. The doorknob doesn't turn. 
+It slips in her sweaty palms and she tightens her grip to prevent it from turning, pressing her shoulder to the door. She can't remember the last time she exerted so much force. Sweat beads on her brow. There's a whine like a desperate gasp. It's her.
+
+The resistance of the door finally gives way and she slams into it breathing hard. She tentatively loosens her hold. The doorknob doesn't turn. 
 
 Are they still there...?
 
@@ -1027,15 +1123,16 @@ Are they still there...?
 
 -> listenatdoor
 
-= go_to_door
 
--> listenatdoor
+= listenatdoor
 
-She presses her ear to the door. There are distorted voices further down the hallway.There's an argument. Knocking. Resistance. Further, past the steel doors there are footsteps pattering, scurrying. She shouldn't be able to hear that. Are the hallways empty tonight? Are they simply echoing?
+She presses her ear to the door. There are distorted voices further down the hallway.There's an argument. Knocking. Resistance. Further, past the steel doors, there are footsteps pattering, scurrying. She shouldn't be able to hear that. Are the hallways empty tonight? Are they simply echoing?
 
 "Miss." The voice again. "You're due for inspection."
 
-* ["Inspection...?"] ->inspection
+Her head spins.
+
+* "Inspection...?" ->inspection
 
 = inspection
 
@@ -1043,11 +1140,11 @@ She presses her ear to the door. There are distorted voices further down the hal
 
 She swallows. She's thirsty but the thought of water disgusts her. "What letter...?" 
 
-The doorknob is beginning to turn in her hand once more. She crushes it against her palm and meets resistance.
+The doorknob turns in her hand once more. She crushes it against her palm and meets resistance.
 
-There's a grunt, followed by a sigh from the other side of the door but no other sound.
+There's a grunt of frustration, followed by a sigh from the other side of the door.
 
-Eventually the footsteps move away. She remains where she stands for one minute and then another. 
+An eternity passes and then the footsteps move away. She remains where she stands for one minute and then another. 
 
 * [Release the doorknob ] -> release_doorknob
 
@@ -1060,50 +1157,203 @@ Eventually the footsteps move away. She remains where she stands for one minute 
 
 ~ reveal_bite = true
 
-She isn't able to let it go right away. Her fingers have gnarled into a claw. It's hard to uncurl them. They feel unnatural relaxed at her side. 
+She isn't able to let it go right away. Her fingers have gnarled into a claw. It's hard to uncurl them. They feel unnaturally relaxed at her side. 
 
-She stares at her palm, ugly with the mark of the door etched into it. Her brain feels hot. She pulls on the collar of her sweater but doesn't find relief. She pulls it off, discarding it on the floor. 
+She stares at her palm, ugly with the mark of the door etched into it. Her brain feels hot. She pulls on the collar of her sweater but doesn't find relief. She pulls it off, discarding it on the floor. It's still too hot.
 
-She lifts her arm and for the first time in weeks allows herself to look at it. The skin is swollen, red lines stretch out from the mangled wound, branching up and down her arm like roots. 
+She lifts her arm, allowing herself to look at the bite for the first time in weeks. The skin is swollen and raised, red lines stretch out from the mangled wound, branching up and down her arm like roots. 
 
 Is there any point in resisting? 
 
-* [Return to bed] -> return_to_bed
-
-=return_to_bed
-
-
--> postdoor
-
+* [Go to Bed] -> go_to_bed
 
 =dont_release_doorknob
 
+~ raise(afraid)
+
+She can't let go of the door. She can't let go of the air in her lungs fighting to get out. She presses her ear more tightly to the door.
+
+There's something whispering.
+
+* [ Focus and listen ] -> focus_listen 
+
+=focus_listen
+
+F<>
+
+-> fl2
+
+=fl2
+
+ o<> 
+
+->fl3
+
+=fl3
+
+    u<>
+
+->fl4
+=fl4
+         n<>
+
+-> fl5
+=fl5
+d 
+
+
+ 
+-> fl6 
+
+=fl6 
+y<>
+
+-> fl7
+
+=fl7 
+o<>
+
+->fl8
+
+=fl8 
+u<>
+
+->fl9 
+
+=fl9 
+
+:)
+
+* [Listen] -> keeplistening
+
+=keeplistening
+
+Found you. Found you. Found you. Found you. Found you. :) :) fou :) ndyoufoundyoufoundyoufoundyoufouNdYouUsfoundYoU:FouN<>:)oufoundyoufoundyoufoundyoufoundyoufoundyoufoundyoufoundyoufoundyoufoundufoundyoufoundyoufoundyoufoundyouou.Foundyou.Foundyou.FoundyouuUsfoundYoU:FouNd:y)oufoundyoufoundyoufoundyoFound you.Found you.FoundyouFoundou)>:) fou:)ndyoufoundyoufoundyoufoundyoufouNdYouUsfoun
+
+* [Make it stop] -> make_it_stop
+=make_it_stop
+
+The words drill into her head. Whispers becoming screams, shouts, threats. Stop stop stop stop stop stop stop stop-- She clamps her hands over her ears but the words still come, louder.
+
+"Stop it!" she screams, over and over. Only her frantic shout echoing around the apartment responds to her.
+
+* Something scratches at the door. -> door_scratch
+
+= door_scratch
+
+She stares at the door, bug-eyed. 
+
+A knock comes, followed by another, then pounding, heavier and fiercer until the door rattles against the frame. She steps back, she opens her mouth-- 
+
+The phone rings.
+
+The door stills.
+
+* [Pick up phone] -> pick_up_phone
+* [ Ignore phone] -> ignore_phone
+
+=pick_up_phone
+~ phone_unplugged = true
+
+She makes her way to the phone, playing a dangerous game with balance along the way. The room is spinning. The phone continues to ring, deafening.
+
+She arrives at the phone and picks up the receiver, bringing it to her ear. She breathes. The thick plastic material feels heavier than it should. "Sam...?"
+
+"No." The woman on the other end of the line sounds overly annoyed. "This is Tiffani with Abaddon Management."
+
+* [ It doesn't seem like someone named Tiffani should work with Abaddon Management ] -> tiffani
+
+=tiffani
+
+"Hello." Her greeting is blank but she doesn't bother apologizing. She keeps her eyes on the door.
+
+Tiffani takes a long breath. "Resident no. 4513, we have received several reports of disruptions from your apartment."
+
+"Did you send someone?" she asks.
+
+"We would like to remind you that disruptions will not be tolerated."
+
+* [She doesn't remember any disruptions.] -> doesnt_remember
+
+=doesnt_remember
+
+"I've not disrupted anything." 
+
+"This is your fifth warning this week. Further misconduct will be cause for transport."
+
+Transport...? Transport where? She looks to the door, wondering if she's imagining the movement of the doorknob. She starts walking to the entrance, the coiled cord stretching as she moves.
+
+"Resident!"
+
+She blinks. "What?"
+
+"Acknowledge this communication."
+
+* "I understand." -> understand
+
+= understand 
+
+~ raise(feral)
+
+"Good." A moment. "As a reminder, visitors are not permitted."
+
+"Yes."
+
+"I shouldn't have to remind you of your violation three months ago."
+
+"Then don't," she says.
+
+There's a long silence on the other end of the line. "Pardon me?"
+
+She drops the receiver, letting it clang loudly to the floor. It rattles as the cord drags it back closer to the nightstand where it rests. 
+
+* [ Sneak to the door] -> sneak_to_door
+
+= sneak_to_door
+
+She lowers her center of gravity, arms out, balancing as she makes her way to the door, careful not to make a sound. She peers at the locks and door, staring for minutes, ignoring the squawking from the telephone followed by the dial tone.
+
+The door doesn't move. The locks don't move. Even when she glares at them everything is still.
+
+She rights herself. With the threat removed a sweeping exhaustion cascades over her.
+
+* [Go to bed] -> go_to_bed
+
+=go_to_bed
+
+
+
+
+
+
+
+
+
+
+->postdoor
+=ignore_phone
+
 
 
 -> postdoor
 
 
-= dontlook_closewindow
+
+
+
 
 -> listenatdoor
 
 
 * [Listen at the door] -> listenatdoor
 
-=leavewindowalone
-
-
-* [Listen at the door]  -> listenatdoor
-
-
-= listenatdoor
 
 
 
 
 -> postdoor
 
-=postdoor
+===postdoor===
 
 <- ambient_shuffle
 
