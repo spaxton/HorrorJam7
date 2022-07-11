@@ -63,7 +63,7 @@ Title: Working Title
 Author: Gloomy
 
 Description:
-TW: Violence, Gore, animal cruelty, stalking, suicidal ideation?
+TW: Violence, Gore, animal cruelty, stalking, suicidal ideation, body horror
 Time:
 
 ->DONE
@@ -81,7 +81,15 @@ Time:
 
 //mood:bleak
 
-Wind and snow howl in the night. She rushes not to hurry inside.
+Wind and snow howl in the night. 
+
+There are two blocks she is allowed to walk. Too small. Not enough. On some days, however, they are everything.
+
+Once she goes inside it will be over.
+
+And yet she wishes to be away from the threat of the outside world.
+
+First, her inspections:
 
 The mat on the doorstep appears intact. She stoops to look more closely. It does not appear out of place.
 
@@ -314,7 +322,7 @@ She steps down carefully, bottle in hand. She considers a glass and decides agai
 
 She examines the envelope. It's deceptively soft. She turns it over in her hands. There are no creases or bends. No errant ink or markings from oily fingers.  It's as if it manifested on the table out of thin air.
 
-She stands, retrieves her letter opener, and opens the envelope carefully. //noise:paperripping
+She stands, retrieves her letter opener, and opens the envelope carefully. //noise:paperripping// is there a typewriter in her apartment
 
 There is a single page inside, folded three times, the edges crisp. The paper is thin and nearly translucent. 
 
@@ -404,7 +412,7 @@ She swings her legs over the side of the bed, rubbing her eyes, scratching her a
 "Hey, you. It's Sam. Gah, sorry. I hope you recognize my voice by now. Anyway, I was hoping you'd be in by this time. I've been thinking about you and you know, everything. How's the bite? Call me."
 
 * [Call Sam]
-// does this need to be a choice? 
+
     -> callsam
     
 * [Don't call Sam]
@@ -568,7 +576,7 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         -> notrouble
         
         
-         * "Drop it. <>
+         * ["Drop it."] <>
         -> dropit
         
         
@@ -585,8 +593,9 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         
         = dropit
    ~ raise(feral)
+   
        
-       "I didn't call to listen to you be sanctimonious. I'm not looking to stick my neck out for anyone. I'm not some freedom fighter. I just want to survive."
+       "Drop it. I didn't call to listen to you be sanctimonious. I'm not looking to stick my neck out for anyone. I'm not some freedom fighter. I just want to survive."
        
        "If you don't fight with everything you've got they'll keep taking."
        
@@ -663,6 +672,8 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
      "I can get to you."
      
    "No, Sam."
+   
+   Sam has visited before. As much as she's enjoyed it, Sam is always the one to pay.
      
 *  [ Sam huffs. ] -> samhuffs
 
@@ -925,8 +936,6 @@ Another nod. She only remembered then that they were due to meet that night. Sam
   
 === postcall ===
 
-//still several more options i need to put back in especially since it seems to be unrelated to what i have screwed up with the code
-
 It's hard to breathe. 
 
 Another quick glance to the window reveals nothing. 
@@ -934,7 +943,7 @@ Another quick glance to the window reveals nothing.
 * [Leave it] 
 -> leavewindowalone
 
-* Open the window to be sure 
+* [Open the window to be sure] 
 -> openwindow
 
 
@@ -968,16 +977,48 @@ The knock comes again.
 
 
 * [Go to door] -> go_to_door1
-//these are not ready yet
-= go_to_door1
-
--> the_end
 
 * [Ignore door] -> ignore_door
 //these are not ready yet
 
+
+
+//these are not ready yet
+= go_to_door1
+
+"Who is it?" she asks.
+
+There's a whine at the other end of the door, like some animal, but no response.
+
+She releases an unsteady breath.
+
+Has a tenant smuggled some creature into the building? Pets are forbidden but it wouldn't be the first time someone has disobeyed. Who knows how many are housed in this complex. 
+
+"Who's there?" she asks, so quiet she doesn't even hear herself. But she has asked. There is no longer any obligation to this intruder.
+
+She is allowed no privacy. There is nothing she can hide. If a warden wants to come in, if anyone wants to come in, she can't stop them.
+
+She waits a while longer but there is no other sound. Light flickers beneath the door. She rubs her eyes. She's tired. Maybe she only imagined a knock.
+
+There's no point staying up any longer.
+
+* [Go to sleep.] -> go_to_bed
+
+
 = ignore_door
--> the_end
+
+She won't go. She won't willingly invite someone into her life. Into her home. 
+
+She doesn't move from where she sits on the bed. 
+
+She remains, hands clasped over her knees, staring the door down. She focuses, listening intently but only hears one of the neighbors down the hall speaking in soft, desperate tones. The words are unclear. She doesn't want to listen anymore.
+
+She's tired and no longer has the energy to worry.
+
+* [Go to sleep]
+
+
+-> go_to_bed
 
 
 
@@ -1068,10 +1109,7 @@ The knock persists.
 
 * [Ask again] -> ask_again
 
-* [Go to the door] -> go_to_door
-
-= go_to_door
-->postdoor
+* [Go to the door] -> go_closer
 
 =ask_again
 
@@ -1252,6 +1290,55 @@ The door stills.
 * [Pick up phone] -> pick_up_phone
 * [ Ignore phone] -> ignore_phone
 
+= ignore_phone
+
+It's as if a demon were sitting on her chest. The pressure is so unbearably tight she worries her heart will stop. She can hear it battering within her despite the shrill alarm of the phone.
+
+It's too much. 
+
+She's plummetting. She's paralyzed. 
+
+The ground has given out from under her. No, it only feels that way. She knows that on some level but that doesn't keep the panic at bay. 
+
+Her voice is hoarse from screaming.
+
+The scratching at the door resumes, more frantic than before.
+
+She turns her back to the door and sits. The floor isn't as cold as she's accustomed to. Did they crank up the heaters? It wouldn't be the first time. But they've never turned the heat up so high before.
+
+She's burning from the inside. It would feel better, she thinks, if she could rip her skin away.
+
+* [Rip skin away]
+
+-> rip_skin_away
+
+= rip_skin_away
+
+She pulls her sweater off. She wears a sleeveless shirt underneath. A habit from long ago.
+
+Her arm is red. The puncture wounds from the fox never quite healed. If she were to rip away her skin it would be best to start there. She brings her fingertips to the bite, pushing her fingers into the inflamed skin. It's spongier than she remembers.
+
+She grimaces, pressing her fingers deeper, pushing past the pain. Blood, dark and foul rises to the surface. Her nose wrinkles. 
+
+Her fingers touch something unexpected.
+
+* [Dig fingers deeper.] -> dig
+
+-> dig
+
+=dig
+
+She buries her fingers deeper, grimacing at the slick texture, stopping when she reaches something unexpected. She's certain she's touched something similar before but not on any person.
+
+She stops her probing, disgusted. 
+
+The phone doesn't ring. There is no one at the door. The world has gone quiet.
+
+She's bloody and tired. It's difficult to keep her eyes open. Even the terrors that loom can't seem to rouse her.
+
+* [Go to bed.] 
+-> go_to_bed
+
 =pick_up_phone
 ~ phone_unplugged = true
 
@@ -1319,57 +1406,187 @@ She rights herself. With the threat removed a sweeping exhaustion cascades over 
 
 * [Go to bed] -> go_to_bed
 
-=go_to_bed
+===go_to_bed===
+
+The bed is cold. It usually makes her feel lonely but tonight it's comforting.
+
+She's cleaned herself. She's tidied everything else. She has unplugged the phone despite it being against Abaddon Management policy. She has turned off the lights. These days it takes little time for her eyes to adjust to the darkness.
+
+Her throat is dry. No matter how she tries she can't get comfortable.
+
+She settles into her pillow, glaring at the ceiling before closing her eyes. 
+
+* [Sleep.] -> sleep
+
+=sleep 
+
+Sleep doesn't come immmediately. Her body fights slumber despite the exhaustion. She's agitated, haunted by restless thoughts of shadows, teeth, and blood. 
+
+She wants only to sleep and never wake.
+
+She needs to keep vigilant. 
+
+There always seems to be a conflict within her. 
+
+But she's never been much of a fighter. Eventually sleep takes her.
+
+* [Thump.] -> encounter
+
+=== encounter === 
+
+//if phone unplugged
+// if feral
+//if fear
+//if doors locked
+// if footsteps discovered 
+//if knife -- feral and fear play roles, if more fear, drops and gets stabbed by, if more feral, stabs
+//if management letter
+//if sam call 
+// find drawing on window
+// generally, biting should be involved
+// 0 locks, escape into the hall, run into wardens, another battle and maybe gunned down
+//3 locks, battle within, takes some knocks
+
+Thump.
+
+Thump. 
+
+Thump.
+
+Something falls. 
+
+Glass breaks.
+
+She shifts in bed, half-asleep. 
+
+A dream...?
+
+Her eyelids are heavy. After a bleary look around the apartment, finding only familiar shadows, she closes her eyes again.
+
+Her chest is heavy. 
+
+* It's hard to breathe. -> encounter2
+
+=encounter2
+
+Her heart is giving out.
+
+She opens her eyes but can't make sense of what she sees.
+
+
+* She's gone mad. ->herself1
+
+=herself1
+
+It's a trick.
+
+A mirror.
+
+No, it's something else.
+
+A person...?
+
+She stares into her own face, eyes black holes, smile stiff and vacant. 
+
+* It's a nightmare. She has to wake up.
+
+->herself2
+
+
+=herself2
+
+It's a lucid dream. She's had those before. She knows how to wake up. She's done it before. Not this time. Everything is too real.
+
+The weight. The terror. The pain in her arm.
+
+There's hoarse, labored breathing. For once, it's not her. She has nearly forgotten how to get air into her lungs. The face draws closer and a pungent, rotting stench emanates from the hot, sticky breath.
+
+It feels as if she will never be clean again.
+
+Rough, calloused hands snake around her neck and squeeze. She attempts to pull them away, not able to give meaning in the moment to the fur that seems to line them or the sharp nails that dig into her neck.
+
+She thought she wanted to sleep forever. She has never truly known herself. 
+
+She curls her fingers, grabbing at the face but her hand only finds cold plastic. 
+
+* A mask.
+
+->mask 
+
+=mask
+
+Her fingers are slippery against it but she manages to slide it half off.
+
+The entity is shaken, and for a moment, the hold on her throat loosens and she gasps for air. 
+
+The thing lifts shaking hands to its shadowy face but doesn't touch it. The mask is askance on a face that isn't a face at all. Not one that's human. 
+
+If she looks any longer her mind will fracture. 
+
+She jerks back and shoves hard. The figure reels, only an instant but long enough for her to break free and get to her feet.
+
+Her time is running out. There's a decision to be made.
+
+* Fight ->fight
+
+
+
+* Run ->run 
+
+
+
+=fight
+//if knife here:
+//if feral or fear
+
+feralknifefight:
+
+She remembers the knife under the pillow and grabs it. The thing that attacked her is now in front of her. It's as tall. It's dressed like she is.
+
+The broken mask reveals an eye, a color like amber.
+
+Fight, Sam said. But she hesitates. The creature leaps, knocking her to the floor and all the air she'd managed to sneak into her lungs with it. She coughs, astonished she's held on to the knife. Her palms are sweating 
+
+fearfulknifefight:
+
+She scrambles to get her bearings, remembering the knife beneath the pillow.
+
+->escape
+
+=run 
+//if no knife:
+//if feral or fear
+
+no knife:
+
+no knife feral: //bites
+
+noknifefear: //bites and frantic
+
+
+->escape
+
+
+
+//if locks
+//if phone
+//if sam
+//if feral/fear
 
 
 
 
+->escape
+
+===escape===
 
 
 
-
-
-
-->postdoor
-=ignore_phone
-
-
-
--> postdoor
-
-
-
-
-
-
--> listenatdoor
-
-
-* [Listen at the door] -> listenatdoor
-
-
-
-
-
--> postdoor
-
+->DONE
 ===postdoor===
 
-<- ambient_shuffle
 
 -> DONE
-
-= ambient_shuffle
-//holy crap i need to fill this out
-{shuffle:
-    - The phone rings, jangled and distorted. She reaches for it but it stops before she can pick it up.
-    - Something paws at the door. She's imagined it. But it continues. She goes to the door but doesn't open it.
-    - 
-    - 
-    - 
-    - 
-    - 
-}
 
 
 -> the_end
