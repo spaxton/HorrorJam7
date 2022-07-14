@@ -1,16 +1,9 @@
 VAR trust = 5
+VAR trapped_survive = false
+VAR egg_survive = false
+VAR foxhunt_survive = false
 
 -> intro
-
-=== story_select ===
-Select a story to play.
-+ Bad Dog
-    -> description
-+ A Different Story
-    Invalid choice (no other stories found)
-    
-    ++ Okay
-    -> story_select
 
 === description ===
 Title: Bad Dog
@@ -18,7 +11,7 @@ Author: Seth Paxton
 
 Description: A wild dog in the woods runs across a group of ill-fated campers.
 
-CW: Gore, Animal Cruelty, Language
+CW: Language, Gore, Animal Cruelty
 Time: 10 Minutes
 
 -> DONE
@@ -35,7 +28,7 @@ Cassie loves living in the woods and doing things only bad dogs get to do. She b
 Cassie eats a candy wrapper and savors the salty plastic, then she throws it up. Her stomach growls. It reminds Cassie of where she used to live: in the dark, hungry, on a chain. But now she lives in the woods, and no one hits her.
 
 + (greet)[Go say hello]
-    Cassie knows that no human can resist a cute dog. She sets her tail wagging and opens her mouth in that way gullible humans find endearing. When she gets close they both turn and look, one makes a cooing sound that means Cassie can do whatever she wants.
+    Cassie knows that no human can resist a cute dog. She sets her tail wagging and opens her mouth (gullible humans find this endearing). When she gets close they both turn and look, one makes a cooing sound that means Cassie can do whatever she wants.
     
     ++ [Continue]
     -- 
@@ -52,7 +45,7 @@ Cassie eats a candy wrapper and savors the salty plastic, then she throws it up.
 
 + [Get that meat]
 
-- {greet: }{sneak: Cassie takes the clever way, she avoids meat-hair-face and begins to walk ever closer to the blue human until it notices her arrival.}{wait: }
+- {greet: Cassie pretends to be a good dog. She sits. She looks friendly. She makes sure the blue human can see what a good dog she is.}{sneak: Cassie takes the clever way, she avoids meat-hair-face and begins to walk ever closer to the blue human until it notices her arrival.}{wait: }
 
 "Aww! <something something> dog! Isn't she just so cute? <something something> owner?" The blue human was a good choice: it doesn't know Cassie is a bad dog.
 
@@ -62,26 +55,27 @@ Cassie will have to <>
 
 + get creative.
 >>>show_trust()
+-> learn_trust
 
--(trust_loop)
+= learn_trust
 //Your trust level is {trust}.
 {The two humans watch Cassie closely.|}{trust == 10: "Just look at her, she's hungry." The face-hair human sighs when the blue human says this, and reveals his stash of bag meat. It takes out a small piece and crouches down.}
 
 * {trust < 10}Gain trust 1
     ~trust ++
-    -> trust_loop
+    -> learn_trust
 * {trust < 10}Gain trust 2
     ~trust += 2
-    -> trust_loop
+    -> learn_trust
 * {trust < 10}Gain trust 3
     ~trust ++
-    -> trust_loop
+    -> learn_trust
 * {trust < 10}{CHOICE_COUNT() < 3} Gain trust 4
     ~trust += 3
-    -> trust_loop
+    -> learn_trust
 * {trust < 10}{CHOICE_COUNT() < 3} Gain trust 5
     ~trust += 5
-    -> trust_loop
+    -> learn_trust
 + {trust >= 10} Take the meat
     ~trust = 0
     //Your trust level is {trust}.
@@ -114,29 +108,30 @@ It's like nothing Cassie has ever smelled before - and it's RIGHT in the middle 
 Cassie doesn't have to get close to know it's disgusting. Dead bodies usually are. But this one is EXTRA gross. Whoever killed this deer barely ate its legs (the best part) and flung the insides all over (disrespectful).
 
 It's smoking with a faint, lilac shimmer in the air that Cassie has never seen. She feels like she's going to throw up, but she is curious.
+->examine_body
 
-- (body_loop)
+= examine_body
 
 * {!close}Give it a sniff
     The stench is rancid and sticks to the inside of Cassie's nose like mud. Lightning, the little things that grow in piles of shit, old blood.
     
     Bag meat claws at Cassie's throat, begging to be set free, but she keeps it in her stomach for now.
-    -> body_loop
+    -> examine_body
     
 * (close)Get closer
-    ->body_loop
+    ->examine_body
     
-* (smell) {close}{!look}Smell the outside ins
-    ->body_loop
+* {TURNS_SINCE(->close) == 1}Smell the outside ins
+    ->examine_body
     
-* (look) {close}{!smell}Look at the inside outs
-    ->body_loop
+* {TURNS_SINCE(->close) == 1}Look at the inside outs
+    ->examine_body
     
-* (taste) {close}{smell or look}Taste the good meats
-    ->body_loop
+* {TURNS_SINCE(->close) == 2}Taste the good meats
+    ->examine_body
     
-* (push) {close}{smell or look}Push the writhing bits
-    ->body_loop
+* {TURNS_SINCE(->close) == 2}Push the writhing bits
+    ->examine_body
     
 * {close}Find what did this
 
@@ -162,33 +157,125 @@ Cassie watches the backwards not-a-dog as its veins move bits, pumping blood and
 
 - It's a little dog, a good dog, a dog that is sad her owner is getting its insides slopped out. The good little dog is barking at the backwards not-dog. Maybe she doesn't realize that after the not-dog is done turning her owner inside out it will do the same to her.
 
-- (trapped_loop)
+~trust = 5
 >>>show_trust()
+->trapped
 
+= trapped
+{|The alien munches, the dog barks since it's stuck on the leash.|The alien slurps up insides, the hiker shoots it with a gun.|The dog puts itself in harms way, the alien pays it no mind as it kills the human.|The alien finhes off the human carcass and grows new legs.|->devotion}
 
-sees a fucked up alien doing some fucked up shit to a human hiker, their dog is trying desperately to get away  but is stuck on the leash. (opportunity for death 1: trapped)
+* {trust < 10}Gain a little trust 1
+    ~trust ++
+    -> trapped
+* {trust < 10}Lose trust
+    ~trust -= 2
+    -> trapped
+* {trust < 10}{CHOICE_COUNT() < 2}Gain a little more trust
+    ~trust ++
+    -> trapped
+* {trust < 10}{CHOICE_COUNT() < 2} Lose a lot of trust
+    ~trust -= 3
+    -> trapped
+* {trust < 10}{CHOICE_COUNT() < 2} Gain trust again
+    ~trust += 2
+    -> trapped
++ (run) Tell her to run
+    {trust >= 8: -> escape}
+    The little dog refuses, it can't abandon its master.
+    -> trapped
+    
+- (escape)
+    ~trapped_survive = true
+    The little dog gets away.
+    
++ [Continue]
+    >>>hide_trust()
+    ->the_source
+    
+- (devotion)
+    The little dog gets eaten.
 
 + [Continue]
+    >>>hide_trust()
+    ->the_source
 
-- Cassie follows the scent of the alien, going back to where it crash landed from - and the campers are there too. They notice Cassie and are pissed off at her.
+- (the_source) Cassie follows the scent of the alien, going back to where it crash landed from - and the campers are there too. They notice Cassie and are pissed off at her.
 
 + [Continue]
     ->twist
 
 === twist ===
+~trust = 0
+>>>show_trust()
+->egg
 
-Cassie tries to warn them about the alien, but they just keep fucking with the meteor (opportunity for death 2: facehugger)
+= egg
+{The two humans make angry noises at Cassie.|The face-hair human picks up a chunk of meteor and throws it at Cassie.|The meteor smokes and shudders: something is inside|The two humans remain close to meteor, even as something oozes in the ground beneath it.|->idiocy}
+
+* {trust < 10}Bark at them
+    ~trust ++
+    -> egg_trust_check ->
+    -> egg
+* {trust < 10}Growl at them
+    ~trust += 2
+    -> egg_trust_check ->
+    -> egg
+* {trust < 10}Whine at them
+    ~trust ++
+    -> egg_trust_check ->
+    -> egg
+* {trust < 10}{CHOICE_COUNT() < 3} Get between them and the egg
+    ~trust -= 3
+    -> egg_trust_check ->
+    -> egg
+* {trust < 10}{CHOICE_COUNT() < 3} Steal their stuff
+    ~trust += 2
+    -> egg_trust_check ->
+    -> egg
+    
+= egg_trust_check
+{trust:
+    - 1:
+    - 2:
+    - 3:
+    - 4:
+    - 5: The blue human backs away, but the face-hair human continues to stay close.
+    - 6:
+    - 7: The yellow-brown human finally gets the message and backs away. The egg hatches and a baby alien crawls out. -> back_away
+    - else: The humans want nothing to do with you.
+}
+->->
+
+    
+- (back_away)
+    ~egg_survive = true
+    The two humans step away from the hatching egg. The not-puppy inside cries out and its mother comes running.
+    
++ [Continue]
+    >>>hide_trust()
+    ->foxhunt
+    
+- (idiocy)
+    The face-beard human gets attacked by the not-puppy. The blue human screams as its friend's insides become outsides. Somewhere in the woods another scream responds: the not-puppy's mother is coming.
 
 + [Continue]
+    >>>hide_trust()
+    ->foxhunt
 
-- Cassie tries to warn them about the alien, but they keep running wildly through the woods and must trust her completely (opportunity for death 3: foxhunt)
+- (foxhunt) Cassie tries to warn them about the alien, but they keep running wildly through the woods and must trust her completely (opportunity for death 3: foxhunt)
 
 + [Continue]
 ->conclusion
 
 === conclusion ===
 
-- Cassie reflects on her choices and whether or not any of the campers survived the encounter. The alien is still alive and out there, somewhere. Cassie picks up a gun to go kill it, because Cassie is a bad dog.
+- Cassie reflects on her choices.
+
+{foxhunt_survive: Cassie did a good thing keeping the blue human alive. It called Cassie a good dog.|Cassie feels a little bad that the blue human couldn't outrun the backwards dog.}
+{egg_survive: Even The stupid human lived.|Probably nothing could have saved the stupid human.}
+{trapped_survive: At least the little dog got away.|The good dog died, it was too attached to its owner.}
+
+The alien is still alive and out there, somewhere. Cassie picks up a gun to go kill it, because Cassie is a bad dog.
 
 THE END
 
