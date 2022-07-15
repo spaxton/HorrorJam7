@@ -16,7 +16,11 @@ Time: 4 minutes.
 
 - It was a romantic summer night with a full moon. Smoke rose from the chimney of a small cabin in the woods.
 
+>>>ShowImageRight(Cabin)
+
 The hero of our story, let's call him Ron, sat by the wood fire with his lovely wife, Natalie. They wed only five months ago.
+
+>>>ChangeCampfire(Sky)
 
 +[Continue]
 - "It's so lovely out here. The full moon especially." Natalie stated wistfully.
@@ -81,7 +85,9 @@ She took a flashlight, hurried out the door.
 - Ron sipped some wine. He assumed an hour of time had gone by.
 "She must be on her way back. Let me check my phone."
 Ron searches the cabin for his phone, can't find it.
-A howl. Clearly a wolf, but something wasn't right.
+A howl. 
+>>>PlaySound(WolfHowl) 
+Clearly a wolf, but something wasn't right.
 Ron realized he had to investigate.
 
 *   (machete) Pick up a machete
@@ -91,15 +97,26 @@ Ron realized he had to investigate.
 - Ron ventured outside, trudged cautiously down the trail.
 The moon was high above.
 
+{
+  - machete == true:
+    >>>ShowImageLeft(Machete)
+  - axe == true:
+    >>>ShowImageLeft(Axe)
+  - sledgehammer == true:
+    >>>ShowImageLeft(Sledgehammer)
+}
+
 +[Continue down the trail]
 
 - Ron realized he must've been close to the nearby cabin. 
+>>>ChangeCampfire(Night)
 The forest was dead still.
 RAWR!
+>>>PlaySound(TwoRingsFearNoise)
 A wolf-beast, standing on two legs, leapt out of the trees.
 Ron raised his {Later_that_night.machete: machete}{Later_that_night.axe: axe}{Later_that_night.sledgehammer: sledgehammer}, but the beast knocked him off his feet!
 The beast leered at him, noticed the wedding ring. It sniffed at the ring.
-
+>>>ChangeCampfire(Bloody)
 Ron grabbed the weapon, swung at the beast, landed a hit.
 It howled at the moon!
 The beast backed up, whimpered as it glanced at the wound.
@@ -130,6 +147,7 @@ Ron found it under a pillow, answered it.
 "This is the ranger service. We got a call from a neighboring cabin an hour ago, we'll send someone to help."
 "Thank you!"
 SMASH!
+>>>PlaySound(TwoRingsFearNoise)
 The werewolf's long arm smashed through the small front window, right over the stove.
     -> Repelling_the_wolf
     
@@ -143,6 +161,7 @@ The werewolf's long arm smashed through the small front window, right over the s
 === The_wolf_retreats ===
 
 - The beast howled into the night as it vanished.
+>>>ChangeCampfire(Night)
 Ron panted, sat on the floor. He wasn't sure how much longer he could last.
 He crawled over to the chairs he and his wife sat in earlier that night. He wondered where she was, if she was safe.
 He had no idea how much time had passed.
@@ -151,6 +170,7 @@ He had no idea how much time had passed.
 === The_wolf_beneath ===
 
 - THUD! THUD!
+>>>ChangeCampfire(Bloody)
 Where was the sound coming from?
 Ron gazed down at the floorboards in front of him as a board thumped.
 The howl of the beast was beneath him as well.
@@ -162,9 +182,10 @@ Ron rushed to the blocked door, cleared the {Back_at_the_cabin.chair: chair}{Bac
 === Trap_time ===
 
 - Ron scrambles out of the cabin, slams the door shut.
-The beast HOWLS!
+The beast HOWLED!
 Ron backed up, noticed something under the porch.
 A beartrap, rusty and potent.
+>>>ShowImageRight(BearTrap)
 Ron grabbed the trap.
 
 *   [Set the trap on the porch] -> The_wolf_is_trapped
@@ -175,7 +196,9 @@ Ron grabbed the trap.
 - Ron spread the trap wide on the porch.
 He backed up, hefted the {Later_that_night.machete: machete}{Later_that_night.axe: axe}{Later_that_night.sledgehammer: sledgehammer}.
 The door crumpled, and the beast landed in the trap.
+>>>PlaySound(BearTrap)
 It HOWLED, as if it knew the chase was up.
+>>>PlaySound(WolfHowl)
 And Ron knew this to be true.
 
     *   [Kill the creature] -> The_wolf_dies_one
@@ -186,7 +209,9 @@ And Ron knew this to be true.
 - Ron spread the trap wide by the crawlspace.
 He backed up, hefted the {Later_that_night.machete: machete}{Later_that_night.axe: axe}{Later_that_night.sledgehammer: sledgehammer}.
 The beast crawled out from the crawlspace, right into the trap.
+>>>PlaySound(BearTrap)
 It HOWLED, as if it knew the chase was up.
+>>>PlaySound(WolfHowl)
 And Ron knew this to be true.
 
 *   [Kill the creature] -> The_wolf_dies_one
