@@ -2,6 +2,7 @@ VAR trust = 5
 VAR trapped_survive = false
 VAR egg_survive = false
 VAR foxhunt_survive = false
+VAR random_int = 0
 
 -> intro
 
@@ -61,20 +62,29 @@ Cassie will have to <>
 //Your trust level is {trust}.
 {The two humans watch Cassie closely.|}{trust == 10: "Just look at her, she's hungry." The face-hair human sighs when the blue human says this, and reveals his stash of bag meat. It takes out a small piece and crouches down.}
 
-* {trust < 10}Gain trust 1
+* {trust < 10}[Flop ears from side to side]
     ~trust ++
+    Cassie tilts her head one way and then another. "Aww, she's <something something> such a cute puppers. <something something>!"
+    
+    The yellow-brown human with the hair-face isn't as easy to impress. It says nothing.
     -> learn_trust
-* {trust < 10}Gain trust 2
+* {trust < 10}[Lay down]
     ~trust += 2
+    //TODO: Flesh
     -> learn_trust
-* {trust < 10}Gain trust 3
+* {trust < 10}[Circle the humans]
     ~trust ++
+    Cassie needs to know every angle before she strikes. Her tail keeps wagging (she can smell the meat) but the yellow-brown human with the hair-face can tell she's plotting.
+    
+    "See? <something something>." The blue human disagrees with it. "You <something something> alone in the woods."
     -> learn_trust
-* {trust < 10}{CHOICE_COUNT() < 3} Gain trust 4
+* {trust < 10}{CHOICE_COUNT() < 3}[Roll on the ground]
     ~trust += 3
+    Cassie feins trust by rubbing her back into the fallen leaves. Both humans look at her with faces that say "I like you," and "I will not hurt you." 
     -> learn_trust
-* {trust < 10}{CHOICE_COUNT() < 3} Gain trust 5
+* {trust < 10}{CHOICE_COUNT() < 3}[Make sad eyes]
     ~trust += 5
+    //TODO: Flesh
     -> learn_trust
 + {trust >= 10} Take the meat
     ~trust = 0
@@ -95,11 +105,11 @@ Cassie's amazing morning has her feeling satisfied. These woods might as well be
 
 + [Continue]
 
-- As Cassie trots around her domain when something catches her nose that she has not smelled before.
+- As Cassie trots around her domain something catches her nose that she has not smelled before.
 
 + \*Sniff*
 
-- What IS that? There are stones and rotting fruit and those little bugs that don't taste good in the smell, but there are other things too: smoke, cow piss, and lightning.
+- What IS that? She smells stone dust and rotting fruit and those little bugs that don't taste good, but there are other things too: smoke, cow piss, and lightning.
 
 It's like nothing Cassie has ever smelled before - and it's RIGHT in the middle of HER woods. The scent isn't hard to pin down. After a while she sees the source.
 
@@ -119,21 +129,31 @@ It's smoking with a faint, lilac shimmer in the air that Cassie has never seen. 
     -> examine_body
     
 * (close)Get closer
+    Every paw forward makes Cassie's fur shudder. Waves of sick heat pulse from the body. Something ripped into the deer. Cassie passes a piece of inside that would be eaten by crows by now if the smell wasn't so wrong.
+    
+    Cassie notices there aren't any birds here. No bugs. The body is alone. Except for Cassie, who can now see that something was put into the deer's dead body.
     ->examine_body
     
-* {TURNS_SINCE(->close) == 1}Smell the outside ins
+* {TURNS_SINCE(->close) == 0}Smell the outside ins
+    Cassie can't even prepare herself for the smell before her hard-earned breakfast pushes up of its own free will. The smell of dried meat vomit mingles with the lightning/dust/wrong eggs smell coming out of the carcass.
+    
+    Cassie blinks away tears as she looks closer at the hole. It's not a bite, the would looks like something sucked the deer from a single tooth the size of Cassie's head. Things wriggle inside the deflated meat.
     ->examine_body
     
-* {TURNS_SINCE(->close) == 1}Look at the inside outs
+* {TURNS_SINCE(->close) == 0}Look at the inside outs
+    //TODO: Flesh
     ->examine_body
     
-* {TURNS_SINCE(->close) == 2}Taste the good meats
+* {TURNS_SINCE(->close) == 1}Taste the good meats
+    //TODO: Flesh
     ->examine_body
     
-* {TURNS_SINCE(->close) == 2}Push the writhing bits
+* {TURNS_SINCE(->close) == 1}Push the writhing bits
+    //TODO: Flesh
     ->examine_body
     
 * {close}Find what did this
+    //TODO: Flesh
 
 * {!close}Leave it alone
     Whatever did this to the deer it isn't worth Cassie's hard-earned breakfast to find out more. She picks a direction away from the closest pieces of thrown insides (a hunk of liver) and walks quickly.
@@ -260,12 +280,76 @@ Cassie watches the backwards not-a-dog as its veins move bits, pumping blood and
 
 + [Continue]
     >>>hide_trust()
+    The {egg_survive:two humans run away together|blue human runs away on its own}. Cassie runs too. Cassie is much faster than humans, it would be easy for her to leave {egg_survive:them|it} to the backwards dog and keep going. 
+    
+    Cassie remembers running through these woods, pursued by mean humans with chains and sticks. But Cassie isn't afraid of these humans. Not now. They are weak, pathetic things running for their lives from something they don't understand.
+    
+    ++ The hunt is on
+    ~ trust += 2
+    >>>show_trust()
     ->foxhunt
 
-- (foxhunt) Cassie tries to warn them about the alien, but they keep running wildly through the woods and must trust her completely (opportunity for death 3: foxhunt)
+= foxhunt
+~ random()
+
+{The woods are dark and humans can't navigate by smell. Cassie can hear the backwards dog speeding over roots on too many legs.|The human trips on a fallen branch. It curses and the backwards dog whistles in excitement.|Moonlight struggles to push through the clouds and leaves. Cassie can smell the lightning and rot that drips from the backwards dog.|"Oh shit! Oh fuck!" Now the human can see the backwards dog. Its long tail coming out the front and pointing right at its fleshy prey.|->got_caught|"Oh God, Vance!" The blue human is losing speed. It doesn't realize that the backwards dog is already back on the move. About to pounce.| ->got_caught}
+
+* {random_int == 0}Zigzag
+    ~trust ++
+    Cassie whips back and forth, widening her scent trail and making her path harder to follow. The blue human sees what she is doing and follows suit.
+    
+    {foxhunt:
+        - 1: Far behind them
+        - 2: Past tree cover
+        - 3: Closing in
+        - else: Just behind them
+    } the backwards dog slows, becoming unsure of its path.
+    -> foxhunt
+* {random_int == 0}Go fast
+    ~trust += 2
+    -> foxhunt
+* {random_int == 0}Nip at {egg_survive:their|its} heels
+    ~trust -= 2
+    -> foxhunt
+* {random_int == 0}{egg_survive}Get them to split up
+    ~trust -= 5
+    The face-beard human is slower, the alien can feel it and runs down the easy prey. The blue human screams with the other one even as it runs faster.
+    -> foxhunt
+* {random_int == 1}Serpentine
+    ~trust ++
+    -> foxhunt
+* {random_int == 1}Create a distraction
+    ~trust -= 3
+    -> foxhunt
+* {random_int == 2}Jump wildly
+    ~trust ++
+    -> foxhunt
+* {random_int == 2}{trust >= 10}Head for the light
+    ~trust ++
+    -> got_away
+
+    
+- (got_away)
+    ~foxhunt_survive = true
+    {egg_survive: Both humans survive.|The blue human makes it out alive.}
+    
++ [Continue]
+    >>>hide_trust()
+    ->conclusion
+    
+- (got_caught)
+    {egg_survive: The face-hair human gets caught. But the backwards dog doesn't slow down, it breaks the human's spine, pulls out a few insides, and keeps coming for the blue human. It must know her scent was close to its pup. ->foxhunt}
+    Both humans get eaten by the backwards dog.
+
++ [Continue]
+    >>>hide_trust()
+    ->conclusion
 
 + [Continue]
 ->conclusion
+
+=== function random() ===
+~random_int = RANDOM(0,2)
 
 === conclusion ===
 
