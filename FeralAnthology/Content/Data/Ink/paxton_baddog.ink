@@ -153,10 +153,17 @@ It's smoking with a faint, lilac shimmer in the air that Cassie has never seen. 
     ->examine_body
     
 * {close}Find what did this
-    //TODO: Flesh
+    This is wrong. Cassie has seen a lot of wrong things so she knows the difference between bad and wrong. Cassie is reminded of her owner. A fat, evil human who loved to hear dogs yelp in pain. Wrong.
+    
+    Cassie couldn't let that go on. It wasn't just her that yelped in the dark. She remembers the taste of neck blood and the yelp humans make in pain. Bad dogs can make wrong things go away. Cassie is a bad dog.
+    
+    She sniffs and finds the same inside-out smell carried by the wind. 
+
+    ++ Follow it, wherever it leads
+        ->backwards_intro
 
 * {!close}Leave it alone
-    Whatever did this to the deer it isn't worth Cassie's hard-earned breakfast to find out more. She picks a direction away from the closest pieces of thrown insides (a hunk of liver) and walks quickly.
+    Whatever to the deer it isn't worth Cassie's hard-earned breakfast to find out more. She picks a direction away from the closest pieces of thrown insides (a chunk of liver) and trots quickly.
     
     Cassie is reminded of the dogs that didn't do good at fighting. They would have their insides hanging out and blood spurting from their necks while Cassie listened and smelled from the dark room. Cassie hates the memory of the dark room.
     
@@ -169,59 +176,77 @@ It's smoking with a faint, lilac shimmer in the air that Cassie has never seen. 
 
 Cassie can hear the gurgling of a hiker whose insides are going out. Cassie cannot move as she sees something that is not a dog slurping out the hiker's blood and bits of bone.
 
-The thing that is not a dog almost looks like a dog if you had never seen a dog before. Its tail is at its front and is doing the slurping. Its head is at its back and is growing new ears and more chunks get slurped. Its legs are only mostly on wrong and it forgot to put on its skin.
+The thing that is not a dog almost looks like a dog if you had never seen a dog before. Its tail is at its front and is doing the slurping. Its head is at its back and is growing new ears as more chunks get slurped. Its legs are only mostly on wrong and it forgot to put on its skin.
 
-Cassie watches the backwards not-a-dog as its veins move bits, pumping blood and stuff that is not blood. Cassie is very glad she has skin. That's when she sees something else. Something attached to the hiker. Something that cannot get away on its own.
+Cassie watches the backwards not-a-dog as its veins pump blood and stuff that is not blood. Cassie is very glad she has skin. That's when she sees something else. Something attached to the hiker. Something that cannot get away on its own.
 
 + A dog
 
-- It's a little dog, a good dog, a dog that is sad her owner is getting its insides slopped out. The good little dog is barking at the backwards not-dog. Maybe she doesn't realize that after the not-dog is done turning her owner inside out it will do the same to her.
+- It's a little dog, a good dog, a dog that is sad his owner is getting its insides slopped out. The good little dog is barking at the backwards not-dog. Maybe she doesn't realize that after the not-dog is done turning his owner inside out it will do the same to him.
 
 ~trust = 5
 >>>show_trust()
 ->trapped
 
 = trapped
-{|The alien munches, the dog barks since it's stuck on the leash.|The alien slurps up insides, the hiker shoots it with a gun.|The dog puts itself in harms way, the alien pays it no mind as it kills the human.|The alien finhes off the human carcass and grows new legs.|->devotion}
+{The backwards not-dog has its tail stuck deep into the human's chest, filling it with something foul as it sucks out the insides. The little dog barks, his leash still clinging to his owner.|The human flails, somehow still alive as its insides are sucked out. It pulls out a thing Cassie knows is called a 'gun' the backwards dog doesn't stop. Thunder splits the air and one of the backwards dog's legs flies off. It pulls its sucking tail out of the human's chest and sticks it into the throat. The human stops flailing.|The little dog barks his head off. He lunges and bites at the muscle and veins that the backwards dog has where skin should be. Sickly fluid pours out instead of blood and the little dog backs away in fear and disgust. The backwards dog doesn't take its tail out of the human's throat.|Cassie retreats as the backwards dog takes its tail out of the human's throat. Its head is swolen with new flesh. Ears grow bones and veins split to fuel sticky birthed limbs. A third pair of legs unfolds as the backwards dog gets longer, and its tail tastes the air for more meat to add to itself.|->devotion}
 
-* {trust < 10}Gain a little trust 1
+* {trust < 10}Bark fear into the little dog
     ~trust ++
+    The little dog doesn't know what to do. It's angry that its owner is being turned inside out. It wants to attack, it wants to find justice, but Cassie knows that isn't going to work.
+    
+    One loud bark is enough to get the little dog's attention. He is snapped out of his rage for a moment, but only a moment.
     -> trapped
-* {trust < 10}Lose trust
+* {trust < 10}Pull out the little dog's leash
     ~trust -= 2
+    Cassie knew that once the little dog could see it was no longer physically bound to its owner it would save itself. She ran at the little dog, grabbed its leash, and pulled.
+    
+    The little dog was pissed. He snapped, taking skin from Cassie's side as she dropped the leash. The dog wouldn't budge.
     -> trapped
-* {trust < 10}{CHOICE_COUNT() < 2}Gain a little more trust
-    ~trust ++
+* {trust < 10}{CHOICE_COUNT() < 2}Intimidate the backwards dog
+    ~trust +=2
+    //TODO: Flesh
     -> trapped
-* {trust < 10}{CHOICE_COUNT() < 2} Lose a lot of trust
-    ~trust -= 3
-    -> trapped
-* {trust < 10}{CHOICE_COUNT() < 2} Gain trust again
+* {trust < 10}{CHOICE_COUNT() < 2} Try to pull the human away
     ~trust += 2
+    //TODO: Flesh
     -> trapped
-+ (run) Tell her to run
-    {trust >= 8: -> escape}
-    The little dog refuses, it can't abandon its master.
+* {trust < 10}{CHOICE_COUNT() < 2} Drag the little dog away
+    ~trust -= 3
+    //TODO: Flesh
+    -> trapped
++ (run) [Tell her to run]
+    {trust >= 7: -> escape}
+    {~Cassie barks warning. "Run" she says, "you are in danger."|Cassie growls, "Go! Leave!"|Cassie stomps the ground, low, "Shoo!"|Cassie whines, laments, mourns the little dog's fate. If only it would leave.} The little dog refuses, it can't abandon its master. {|Not yet.|He's too good of a dog.|}
     -> trapped
     
 - (escape)
     ~trapped_survive = true
+    >>>hide_trust()
     The little dog gets away.
+    //TODO: Flesh
     
 + [Continue]
-    >>>hide_trust()
     ->the_source
     
 - (devotion)
-    The little dog gets eaten.
-
-+ [Continue]
     >>>hide_trust()
+    The backwards dog points its tail at the little dog, still barking next to its owner's carcass now empty. Cassie backs away as the little dog lunges. His muzzle is pierced by the backwards dog's tail and the rancid sucking begins again.
+    
+    Cassie knows it will not take long for the little dog's insides to fall out. She runs. Cassie chases the scent that the backwards dog left, it would not retrace its steps searching for meat. She runs <>
+
++ to where it came from.
     ->the_source
 
-- (the_source) Cassie follows the scent of the alien, going back to where it crash landed from - and the campers are there too. They notice Cassie and are pissed off at her.
+- (the_source) The backwards dog's scent fades as Cassie follows it wrong. It isn't hard to backtrack: broken branches, puddles of backwards piss, carcasses. Cassie remembers her owner's pack: foul humans who liked to hurt dogs. She remembers them scouring these woods for the dogs she was caged with. It isn't hard to backtrack. To play keep away.
 
-+ [Continue]
+    Now, just like then, Cassie doesn't stop until the trail fades to nothing. Except it's not exactly nothing. Cassie sniffs carefully and is sure that she has gone away from the backwards dog... but there's more of that lightning/rotting fruit/cow piss smell. 
+    
++ Another carcass?
+
+- No, this isn't exactly the bile that the backwards dog leaves behind. Wary of losing her way in the fading light Cassie breathes deep: stone dust and ashes... sweat and the things that grow in shit... dried meat and old beer.
+
++ Campers.
     ->twist
 
 === twist ===
