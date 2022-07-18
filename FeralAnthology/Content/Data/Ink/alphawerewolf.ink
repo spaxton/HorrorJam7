@@ -41,6 +41,7 @@ Time: 15 minutes
 -> DONE
 
 === start ===
+>>>PlayMusic(alpha_girl)
 Once upon a time, there was a YouTuber. She made videos where she would do her makeup while talking about...
 
  * [Fandom drama] 
@@ -75,7 +76,7 @@ That's right. And she was just starting on a new video...
 -> END
 
 = fandom_drama
-* "I hope you're already for a buck-wild thrill ride[..."], because today, we're talking about the Omegaverse community! For those of you who are unfamiliar... boy, are you in for a treat. A horrible, horrible treat.
+* "I hope you're already for a bonkers-wild thrill ride[..."], because today, we're talking about the Omegaverse community! For those of you who are unfamiliar... boy, are you in for a treat. A horrible, horrible treat.
     
     "To summarize a very long story, the Omegaverse is a community-created ficitonal universe where human biology is a little bit... different. Characters in these stories go into heat as though they were canines - those are omegas. Some characters are 'alphas,' who find an omega's heat irresistable, and there are also 'betas' who... are also there, I guess?
     
@@ -115,6 +116,7 @@ That's right. And she was just starting on a new video...
 * [Mark Territory?] 
 >>>HideImageRight()
 >>>ChangeCampfire(Dusk)
+>>>PlayMusic(campfire)
 Mark Territory was an infamous "alpha male" streamer with about ten times as many followers as the YouTuber. It never occurred to her that he might even notice her little joke, let alone care enough to take offense. She didn't think anything of it at all.
 
 And so, in the last moments of peaceful oblivion that she would have for some time, she finished recording her video, edited it, and uploaded it. At that point it had been a very long day, so after checking to see that her video had published without issue, she silenced her phone and climbed into bed.
@@ -161,7 +163,8 @@ Numbly, the YouTuber opened up her laptop and navigated to Territory's channel. 
 "Oh goddamn it," she muttered to herself.
 
     ** She watched the video.
-    
+    >>>PlayMusic(alpha_guy)
+    >>>PlaySound(ManHowl)
     >>>ChangeCampfire(Lime)
     >>>ShowImageLeft(Guy)
     
@@ -195,6 +198,7 @@ Numbly, the YouTuber opened up her laptop and navigated to Territory's channel. 
 =pausevideo
 >>>HideImageLeft()
 >>>ResetCampfire()
+>>>PlayMusic(campfire)
 
 Disgusted, the YouTuber stopped the video.
 
@@ -207,6 +211,7 @@ Disgusted, the YouTuber stopped the video.
 "I can, but I know you and I know you'll eventually watch it anyway. You may as well get it over with while I'm here with you."
 
 * The YouTuber felt a bit called out, but could not argue the point.
+>>>PlayMusic(alpha_guy)
 
 ->skiptotheend
 
@@ -229,6 +234,7 @@ With a tired resignation, she clicked to the time as instructed. Once more, Mark
 * ["Ah."]
 >>>HideImageLeft()
 >>>ResetCampfire()
+>>>PlayMusic(campfire)
 
 "Ah," said the YouTuber.
 
@@ -247,8 +253,8 @@ The YouTuber looked at her still-growing DM count. Mystery solved.
 
 
 == nowayjose
-
-"Good. Hey, I've got to go, but take care of yourself, okay? Let me know if you need to get out of the hou for a while."
+>>>PlayMusic(alpha_girl)
+"Good. Hey, I've got to go, but take care of yourself, okay? Let me know if you need to get out of the house for a while."
 
 "Sure. Thanks."
 
@@ -335,11 +341,12 @@ She needed to make a statement, and quickly. She shoveled down a bowl of cereal,
 "Let's put this to rest here: if Mark Territory is this insecure over a tame little joke, that's his problem. I have no interest in engaging with him whatsoever."
 
 * That would do for now.
-
+>>>PlaySound(PhoneRing)
 When she published the video, the YouTuber was not so optimistic as to think it would be the end of things, but it felt like a step in the right direction. Seeing her base support her decision brought her a great deal of relief, and she stuck around for a few hours, monitoring the comments and aggressively moderating all fronts of communication.
 She'd barely signed off when her phone rang. She didn't recognize the number.
 
 ** [She answered the phone]
+>>>PlaySound(ManHowlPhone)
     "Hello?" she answered.
 The only response was an ear-splitting, "Awoooo~!"
 The YouTuber hung up. 
@@ -350,7 +357,8 @@ The YouTuber refused the call. There was no way it would be anything good.
 ->hangup
 
 =hangup
-
+>>>PlayMusic(campfire)
+>>>PlaySound(PhoneRing)
 No sooner had she set the phone down than it began to ring again. A notification popped up, informing the YouTuber that she had a voice mail.
 
 She put the phone into "Do Not Disturb" mode and flung it aside, flopping backwards onto her bed. She needed to pick her laptop back up and confront this, she knew. But she dreaded what she would see when she opened that screen.
@@ -365,6 +373,7 @@ She put the phone into "Do Not Disturb" mode and flung it aside, flopping backwa
         ->openthelaptop
 
 =openthelaptop
+>>>PlayMusic(alpha_fear)
 The YouTuber took a deep breath...
 
 * And opened her laptop[.] to see that... yup. She sure had been doxxed.
@@ -383,17 +392,18 @@ She needed to take a break, but before she did, there was one last matter to att
 *** [She would make another video] ->anothervideo
 
 ==emailmt
+>>>PlayMusic(alpha_guy)
 The YouTuber knew that this was exactly what he wanted. She knew the conversation would be unpleasant. But she also knew that Territory's pathetic cronies weren't about to listen to anyone else. Besides, she wasn't about to duck her head and let them harass her without standing up for herself. She composed an email with documented evidence of her doxxing and a polite but firm request for him to speak to his fan base.
 It took three more emails, one including a hollow legal threat, before he finally agreed to address his fans. 
 * He had a Short up within minutes.
 "What's up, Pack? Just thought I'd let you know, it's come to my attention that allegedly, Little Miss 'No Such Thing as an Alpha' has been doxxed. And I thought it might be time for a healthy reminder: She's not worth it.
 ** "Besides, we'll be seeing her at VidCon soon enough."
-
+>>>PlayMusic(alpha_girl)
 
 ->continue
 ==anothervideo
 >>>ShowImageRight(Girl)
-
+>>>PlayMusic(alpha_girl)
 >>>ChangeCampfire(Sky)
 She made another video.
 
@@ -444,6 +454,7 @@ The YouTuber moved to her living room, leaving phone and laptop behind. She didn
 It wasn't her tasty dinner's chauffer that caught her eye, however. Instead, she was sure she saw movement in her bushes.
 
 * [She double checked that the doors were locked] 
+    >>>PlayMusic(alpha_fear)
     The YouTuber rushed to her front door, double-checking that it was locked. It was, both the deadbolt and the handle. Before she could check the back door, she heard a rustling of movement outside, shortly followed by a knock.
     
     She looked through the peephole and saw the face of an unknown man. He howled, laughed, and knocked again.
@@ -453,17 +464,19 @@ It wasn't her tasty dinner's chauffer that caught her eye, however. Instead, she
     The threat didn't seem to deter him. He kept pounding on the door, howling like a lunatic.
     
     ** Boom.
-        "Awwoooo."
-    
-        *** BOOM.
-            "AWWWWWOOOO."
+        >>>PlaySound(Knock)
+
+        *** "Awwwoooo."
+            >>>PlaySound(ManHowl)
             >>>ChangeCampfire(Dusk)
         
-            **** BOOM!!
-                "AAAAAAAAWWOOOOOOOOOOOOOOOOOOOO!"
+            **** BOOM.
+                >>>PlaySound(Knock)
+                ***** "AAAAAAAAWWOOOOOOOOOOOOOOOOOOOO!"
+                    >>>PlaySound(ManHowl)
                     >>>ChangeCampfire(Night)
         
-        ***** The YouTuber's mind was racing. What were her options here?
+        ****** The YouTuber's mind was racing. What were her options here?
             She thought that she should probably run for her phone. The last thing she wanted was an alteraction with some deranged man.
             -> foodarrives
             
@@ -472,6 +485,7 @@ It wasn't her tasty dinner's chauffer that caught her eye, however. Instead, she
 
 * [She peeked out the window] 
     >>>ChangeCampfire(Dusk)
+    >>>PlayMusic(alpha_fear)
     Heart pounding, she moved closer to the window to get a good look.
     
     Right there in plain view was an unfamiliar man, standing in her yard. They made eye contact, and he started howling.
@@ -492,6 +506,7 @@ It wasn't her tasty dinner's chauffer that caught her eye, however. Instead, she
 
 =foodarrives
     >>>ResetCampfire()
+    >>>PlayMusic(campfire)
     Her thoughts were interrupted by the sight of a car parking in front of her house. A large man exited the vehicle, plastic bag in hand. The howling freak took one look at him and sprinted away.
     
     
@@ -509,6 +524,8 @@ It wasn't her tasty dinner's chauffer that caught her eye, however. Instead, she
 >>>ShowImageRight(Girl)
 >>>ShowImageLeft(Guy)
 >>>ChangeCampfire(Lime)
+>>>PlayMusic(alpha_guy)
+>>>PlaySound(ManFootsteps)
 
 * He waltzed right up to her, followed by a cameraman.
     "Hey hey, there she is! It's -- what was her name again?"
@@ -527,6 +544,7 @@ It wasn't her tasty dinner's chauffer that caught her eye, however. Instead, she
     -> after_confrontation
 
 ==after_confrontation
+>>>PlayMusic(alpha_girl)
 >>>ResetCampfire()
 "H-hey!" he shouted after her. "Don't you walk off while I'm talking to you!"
 
@@ -543,6 +561,7 @@ The YouTuber kept walking.
     
     ** After all, her hotel was in walking distance.
         >>>ChangeCampfire(Dusk)
+        >>>PlaySound(ManHowl)
 
         It was a warm, summer night with a bright, full moon, and for the first time in a month, the YouTuber felt like maybe things were going to be okay. She had even momentarily forgotten about Mark Territory... until she heard the wolf howl.
         
@@ -552,19 +571,24 @@ The YouTuber kept walking.
             ->encounter
 
 ===encounter
+>>>PlayMusic(alpha_fear)
+>>>PlaySound(WolfBreath)
 
 The YouTuber quickened her pace, but the ominous sounds continued. She heard another howl, this one closer, and the shuffling footsteps of an animal. Focused as she was on the sound, she made a wrong turn, not realizing until she was already halfway down an alley's dead end.
 As she faced nothing but the bare side of a building, a shadow fell over her. She could smell fetid breath, a hint of blood, and an overwhelming scent entirely too similar to that of a filthy dog.
 * "{growledname}," it growled.
+>>>PlaySound(WolfGrowl1)
 The voice was deep, inhuman, and altogether too close.
 
 "Please," she said. "Don't do this, Mark."
 A bestial voice laughed behind her. "Turn around," it ordered. 
 ** Clenching her fists, she slowly turned.
+>>>PlayMusic(alpha_terror)
 >>>ShowImageLeft(Werewolf)
 The wolf was enormous, with matted fur and thick streams of drool dribbling from its muzzle.
 "Look at me," the beast ordered. "This is the face of a true alpha. It's the first... and last time you'll ever meet a high-quality male!"
 *** The werewolf guffawed[.], an awful sound somewhere between a laugh and a bark.
+>>>PlaySound(WolfGrowl2)
 The YouTuber looked up at him, hands shaking with adrenaline.
 "It never had to come to this," she said.
 "To what?" the wolf laughed, but it would not be laughing for long.
@@ -585,9 +609,10 @@ She didn't answer. Instead...
 * She lashed out with her talons[.], clawing at his face. Her nails dug deep, coming away with clumps of flesh and fur. The wolf howled in agony, raising his claws to his mangled muzzle.
 The harpy didn't pass up the opporunity. She leapt onto him, digging all four talons into his back. He yowled and swiped at her, but his uncoordinated attacks only managed to grab a few stray feathers.
 The harpy slashed and slashed, and when his blood loss became too great, the wolf collapsed.
-She lowered her head and began to eat.
+** She lowered her head and began to eat.
+>>>PlaySound(GoreEaten)
 The wolf's flesh was tough and gamey, but she chewed through it all the same. Once the life bled out of him and his body returned to its original human form, it tasted a bit better.
-** The harpy ate until she was full, then flapped away into the night.
+The harpy ate until she was full, then flapped away into the night.
     ~ ending = ANIMAL
     -> returntocon
 
@@ -669,6 +694,7 @@ She didn't answer.
 >>>HideImageLeft
 >>>ResetCampfire()
 >>>ShowImageRight(Girl)
+>>>PlaySound(alpha_girl)
 
 The next day, the YouTuber returned to the con, continuing right where she had left off. 
 

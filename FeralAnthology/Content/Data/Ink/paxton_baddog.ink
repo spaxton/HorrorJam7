@@ -18,6 +18,8 @@ Time: 10 Minutes
 -> DONE
 
 === intro ===
+>>>PlayMusic(baddog_main1)
+>>>ResetCampfire()
 Cassie is a bad dog.
 
 Cassie loves living in the woods and doing things only bad dogs get to do. She barks at children. She steals from picnics. Cassie poops wherever she wants because Cassie is a bad dog.
@@ -25,6 +27,8 @@ Cassie loves living in the woods and doing things only bad dogs get to do. She b
 + [Continue]
 
 - One morning, as Cassie is playing in leaves, she catches the scent of dried meat, sweat, and stale beer. Campers. She lopes along finding signs like broken glass, broken branches, and candy wrappers. 
+
+>>>ChangeCampfire(Bright)
 
 Cassie eats a candy wrapper and savors the salty plastic, then she throws it up. Her stomach growls. It reminds Cassie of where she used to live: in the dark, hungry, on a chain. But now she lives in the woods, and no one hits her.
 
@@ -52,7 +56,7 @@ Cassie eats a candy wrapper and savors the salty plastic, then she throws it up.
 
 The yellow-brown human says it doesn't like Cassie. It jealously guards its meat. "<something something> wild. No collar <something something> leave it alone."
 
-Cassie will have to <>
+Cassie will have to...
 
 + get creative.
 >>>show_trust()
@@ -78,15 +82,17 @@ Cassie will have to <>
     
     "See? <something something>." The blue human disagrees with it. "You <something something> alone in the woods."
     -> learn_trust
+//* Bark at them
 * {trust < 10}{CHOICE_COUNT() < 3}[Roll on the ground]
     ~trust += 3
     Cassie feins trust by rubbing her back into the fallen leaves. Both humans look at her with faces that say "I like you," and "I will not hurt you." 
     -> learn_trust
 * {trust < 10}{CHOICE_COUNT() < 3}[Make sad eyes]
     ~trust += 5
-    //TODO: Flesh
+    //TODO: Flesh - Beg
     -> learn_trust
 + {trust >= 10} Take the meat
+    >>>PlayMusic(baddog_main2)
     ~trust = 0
     //Your trust level is {trust}.
     Suckers. Cassie doesn't bother with the tiny bite, instead she lunges for the whole bag of meat and runs!
@@ -100,7 +106,7 @@ Cassie will have to <>
     ->development
 
 === development ===
-
+>>>ChangeCampfire(Sky)
 Cassie's amazing morning has her feeling satisfied. These woods might as well belong to her. And all its meat (which she has buried in strategic locations that only sometimes get forgotten).
 
 + [Continue]
@@ -129,6 +135,7 @@ It's smoking with a faint, lilac shimmer in the air that Cassie has never seen. 
     -> examine_body
     
 * (close)Get closer
+    >>>ChangeCampfire(Lime)
     Every paw forward makes Cassie's fur shudder. Waves of sick heat pulse from the body. Something ripped into the deer. Cassie passes a piece of inside that would be eaten by crows by now if the smell wasn't so wrong.
     
     Cassie notices there aren't any birds here. No bugs. The body is alone. Except for Cassie, who can now see that something was put into the deer's dead body.
@@ -160,6 +167,7 @@ It's smoking with a faint, lilac shimmer in the air that Cassie has never seen. 
     She sniffs and finds the same inside-out smell carried by the wind. 
 
     ++ Follow it, wherever it leads
+        >>>ChangeCampfire(Sky)
         ->backwards_intro
 
 * {!close}Leave it alone
@@ -173,7 +181,8 @@ It's smoking with a faint, lilac shimmer in the air that Cassie has never seen. 
         -> backwards_intro
     
 - (backwards_intro)
-
+>>>PlayMusic(baddog_alien)
+>>>ChangeCampfire(Alien)
 Cassie can hear the gurgling of a hiker whose insides are going out. Cassie cannot move as she sees something that is not a dog slurping out the hiker's blood and bits of bone.
 
 The thing that is not a dog almost looks like a dog if you had never seen a dog before. Its tail is at its front and is doing the slurping. Its head is at its back and is growing new ears as more chunks get slurped. Its legs are only mostly on wrong and it forgot to put on its skin.
@@ -231,11 +240,14 @@ Cassie watches the backwards not-a-dog as its veins pump blood and stuff that is
     
 - (devotion)
     >>>hide_trust()
+    >>>ChangeCampfire(Bloody)
     The backwards dog points its tail at the little dog, still barking next to its owner's carcass now empty. Cassie backs away as the little dog lunges. His muzzle is pierced by the backwards dog's tail and the rancid sucking begins again.
     
     Cassie knows it will not take long for the little dog's insides to fall out. She runs. Cassie chases the scent that the backwards dog left, it would not retrace its steps searching for meat. She runs <>
 
 + to where it came from.
+    >>>PlayMusic(baddog_main2)
+    >>>ChangeCampfire(Dusk)
     ->the_source
 
 - (the_source) The backwards dog's scent fades as Cassie follows it wrong. It isn't hard to backtrack: broken branches, puddles of backwards piss, carcasses. Cassie remembers her owner's pack: foul humans who liked to hurt dogs. She remembers them scouring these woods for the dogs she was caged with. It isn't hard to backtrack. To play keep away.
@@ -250,50 +262,68 @@ Cassie watches the backwards not-a-dog as its veins pump blood and stuff that is
     ->twist
 
 === twist ===
+Cassie picks over the new hill of dirt and looks down into a large, circular ditch that wasn't there before. It reeks of backwards, and in the middle are a bunch of foul rocks and two stupid humans.
+
+They recognize Cassie, silhouetted at the top of the ditch by the setting sun. "That bitch took my jerky!" One shouts. They can't smell that the rocks are wrong.
+
++ They don't know about the backwards dog.
+-
 ~trust = 0
 >>>show_trust()
 ->egg
 
 = egg
-{The two humans make angry noises at Cassie.|The face-hair human picks up a chunk of meteor and throws it at Cassie.|The meteor smokes and shudders: something is inside|The two humans remain close to meteor, even as something oozes in the ground beneath it.|->idiocy}
-
-* {trust < 10}Bark at them
-    ~trust ++
-    -> egg_trust_check ->
-    -> egg
-* {trust < 10}Growl at them
+{|The humans are practically ignoring Cassie. They can't smell the wrongness so they get closer. One of the rocks has the same lilac shimmer Cassie saw above the deer corpse.|The humans notice Cassie getting closer. The yellow-brown human picks up one of the foul rocks and hurls it at her. It doesn't notice that the rock is slick with the backwards dog's not-blood.|Cassie sees the big rock breathe. The human's don't notice the rock exhaling fetid fumes. Something is inside.|Cassie has the human's attention when the big rock splits. Ooze pours out and something writhes right beneath their noses.|->idiocy}
+{| |>>>ChangeCampfire(Night)|}
+* Bark at them
     ~trust += 2
+    Cassie lets out several warning barks. "Stop! Danger!" But stupid humans don't learn any other languages. They keep going deeper into the circular ditch, closer to the wrong rocks that smell like lightning and rotting fruit.
+    
+    Before the yellow-brown human can touch one Cassie barks with FORCE and he recoils in surprise. <>
     -> egg_trust_check ->
     -> egg
-* {trust < 10}Whine at them
+* Growl at them
+    ~trust --
+    Cassie takes a couple careful steps into the circular ditch. She growls at the humans as they approach the rocks in the middle. "Oh yeah? Fuck you! These aren't <something something>!"
+    
+    The human with hair on its face thinks Cassie is being territorial. It's not wrong, but it is stupid. <>
+    -> egg_trust_check ->
+    -> egg
+* Whine at them
     ~trust ++
+    Cassie paws the ground and feels the wrongness that soaks the dirt. Oil and shit and tingling. "Oh don't give me that." The yellow-brown human dislikes Cassie's deference. Cassie hates it.
     -> egg_trust_check ->
     -> egg
-* {trust < 10}{CHOICE_COUNT() < 3} Get between them and the egg
-    ~trust -= 3
-    -> egg_trust_check ->
-    -> egg
-* {trust < 10}{CHOICE_COUNT() < 3} Steal their stuff
+* {CHOICE_COUNT() < 3} Get between them and the egg
     ~trust += 2
+    Cassie sprints down to the bottom of the ditch. The rancid smell burns her eyes and she knows the rocks are just as backwards as the thing that is not a dog, but she places herself in harms way anyway.
+    
+    "What the fuck!?" The humans jump back, but they don't go far. Cassie hopes they understand. <>
+    -> egg_trust_check ->
+    -> egg
+* {CHOICE_COUNT() < 3} Steal their stuff
+    ~trust -= 2
+    //TODO: Flesh
     -> egg_trust_check ->
     -> egg
     
 = egg_trust_check
 {trust:
-    - 1:
-    - 2:
+    - 1:{~"What is that dog doing?"|"Why does that dog <something>?"|"Where did that dog <something something>?"}
+    - 2:{~"This is weird..." Cassie knows those words. Weird is bad.|"What on earth..." confusion is a start.}
     - 3:
-    - 4:
-    - 5: The blue human backs away, but the face-hair human continues to stay close.
-    - 6:
-    - 7: The yellow-brown human finally gets the message and backs away. The egg hatches and a baby alien crawls out. -> back_away
-    - else: The humans want nothing to do with you.
+    - 4:"<something something> that dog is trying <something something>?" The blue human is paying more attention to Cassie.
+    - 5:The blue human starts to step away from the rocks, but the face-hair human stays right in the middle.
+    - 6:"Vance{|, really}... <something something> wrong{ here|}." The stupid human with its stupid hair-face doesn't believe its human friend.
+    - 7:The yellow-brown human finally gets the message and backs away. The egg hatches and a baby alien crawls out. -> back_away
+    - else: The humans {|still }want nothing to do with Cassie.
 }
 ->->
 
     
 - (back_away)
     ~egg_survive = true
+    >>>PlayMusic(baddog_alien)
     The two humans step away from the hatching egg. The not-puppy inside cries out and its mother comes running.
     
 + [Continue]
@@ -301,7 +331,21 @@ Cassie watches the backwards not-a-dog as its veins pump blood and stuff that is
     ->foxhunt
     
 - (idiocy)
-    The face-beard human gets attacked by the not-puppy. The blue human screams as its friend's insides become outsides. Somewhere in the woods another scream responds: the not-puppy's mother is coming.
+    >>>PlayMusic(baddog_alien)
+    >>>ChangeCampfire(Bloody)
+    There's nothing more Cassie can do. Except leave. "Dumb dog, probably <something something something>." The hair-face human leans back on the big rock triumphantly, the putrid soil gives under the weight. The rock breaks and something that is not a puppy is pushed out.
+    
+    Cassie sees the not-blood on the human's paw. "What the fuck--" The blue human screams as the not-puppy impales its tail-face into the stupid human's leg. The stupid-face-hair human crumples with pain, then goes still.
+    
++ Back up further
+    
+    The backwards puppy inflates with blood, gorging itself on bits of stupid. Cassie watches the blue human kick at the backwards puppy, ripping its tail from the leg and squeezing out a shrill scream. Another wrong scream perforates the air in reply.
+    
+    "Oh god-" the blue human is shocked still, "what was THAT?" Cassie knows. The backwards mother is coming for her child.
+    
+    ++ Run
+    >>>show_trust()
+    ->foxhunt
 
 + [Continue]
     >>>hide_trust()
@@ -316,8 +360,8 @@ Cassie watches the backwards not-a-dog as its veins pump blood and stuff that is
 
 = foxhunt
 ~ random()
-
 {The woods are dark and humans can't navigate by smell. Cassie can hear the backwards dog speeding over roots on too many legs.|The human trips on a fallen branch. It curses and the backwards dog whistles in excitement.|Moonlight struggles to push through the clouds and leaves. Cassie can smell the lightning and rot that drips from the backwards dog.|"Oh shit! Oh fuck!" Now the human can see the backwards dog. Its long tail coming out the front and pointing right at its fleshy prey.|->got_caught|"Oh God, Vance!" The blue human is losing speed. It doesn't realize that the backwards dog is already back on the move. About to pounce.| ->got_caught}
+{|>>>ChangeCampfire(Alien)|>>>PlayMusic(baddog_terror)|}
 
 * {random_int == 0}Zigzag
     ~trust ++
@@ -355,6 +399,7 @@ Cassie watches the backwards not-a-dog as its veins pump blood and stuff that is
 
     
 - (got_away)
+    >>>PlayMusic(baddog_alien)
     ~foxhunt_survive = true
     {egg_survive: Both humans survive.|The blue human makes it out alive.}
     
@@ -363,7 +408,9 @@ Cassie watches the backwards not-a-dog as its veins pump blood and stuff that is
     ->conclusion
     
 - (got_caught)
+    >>>ChangeCampfire(Bloody)
     {egg_survive: The face-hair human gets caught. But the backwards dog doesn't slow down, it breaks the human's spine, pulls out a few insides, and keeps coming for the blue human. It must know her scent was close to its pup. ->foxhunt}
+    >>>PlayMusic(baddog_alien)
     Both humans get eaten by the backwards dog.
 
 + [Continue]
@@ -377,7 +424,8 @@ Cassie watches the backwards not-a-dog as its veins pump blood and stuff that is
 ~random_int = RANDOM(0,2)
 
 === conclusion ===
-
+>>>PlayMusic(baddog_main2)
+>>>ChangeCampfire(Night)
 - Cassie reflects on her choices.
 
 {foxhunt_survive: Cassie did a good thing keeping the blue human alive. It called Cassie a good dog.|Cassie feels a little bad that the blue human couldn't outrun the backwards dog.}
