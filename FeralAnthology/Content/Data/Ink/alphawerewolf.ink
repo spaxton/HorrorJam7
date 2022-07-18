@@ -28,17 +28,6 @@ VAR takeout = ""
     }
 
 
-=== description === 
-Title: No Such Thing as an Alpha
-Author: Ghost Clown
-
-Description: When a YouTuber makes a harmles joke about an "alpha male" streamer, things go worse than she could have imagined...
-
-CW: Stalking, violence, misogyny
-
-Time: 15
-
--> DONE
 
 === start ===
 >>>PlayMusic(alpha_girl)

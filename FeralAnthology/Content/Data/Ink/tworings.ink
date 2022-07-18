@@ -1,15 +1,4 @@
 
--> description
-=== description ===
-Two Rings
-Author: Jeff Harman
-
-Description: A newly-wed couple can't escape tragedy when a werewolf visits their summer cabin.
-
-CW: Gore, violence.
-Time: 4 minutes.
-
-+ Start
 ->opening
 
 === opening ===

@@ -981,7 +981,7 @@ Movement from above. Metal clangs.
 
 -She yanks back the instant before the window wobbles and slams to a shut, just missing her neck. She heaves for air, scrambling off the bed.
 
-* [There's A knock at the door.] ->knock_at_door
+* [There's a knock at the door.] ->knock_at_door
 
 =knock_at_door
 * [There's a knock at the door.] 
@@ -1585,9 +1585,6 @@ They press the barrel of the gun to her forehead and she closes her eyes.
 
 *Finally, some peace. ->DONE
 
-
-
-
 =door_is_locked
 
 >>>PlaySound(Lock)
@@ -1714,7 +1711,7 @@ She looks at the thing on the floor, that strange doppelganger. It is as strange
 
 It twitches on the floor.
 
-The phone rings.
+The phone continues like an alarm.
 
 * [Pick up phone] ->answerphone
 
@@ -1724,7 +1721,7 @@ The phone rings.
 
 >>>PlaySound(PhoneRing)
 
-The phone rings too loudly. She goes to it, ripping the cord from the wall.
+It rings too loudly, like a drill in her ears. She goes to it, ripping the cord from the wall.
 
 She looks around the destroyed apartment. If they didn't know, they will now.
 
@@ -1742,7 +1739,7 @@ She takes the metal clanking stairs down until she arrives in the lobby of the b
 
 The entrance will be locked soon. She runs faster than she ever has and explodes into the night. It's cold. She doesn't have a jacket. It's snowing.
 
-The blood is still warm on her body and skin and tendrils of smoke twist from her like tails.
+The blood is still warm on her skin and tendrils of smoke twist from her like tails.
 
 Gunshots fire from inside the building. 
 
@@ -1752,7 +1749,7 @@ She plods along in the snow. Alarms are being raised in other buildings around t
 
 -In the distance she sees Sam, huddled by the payphone, head turned up to see the apartment building. 
 
-She resists the impulse to go to them. How could they see her like this...? Better that Sam remembers her as something better. Not this thing she's become or always has been.The blood is still warm on her body and skin and tendrils of smoke twist from her like tails.
+She resists the impulse to go to them. How could they see her like this...? Better that Sam remembers her as something better. Not this thing she's become or always has been.
 
 Returning to the building would be suicide. Sam could see. Sam has already seen terrible things.
 
@@ -1760,7 +1757,7 @@ Returning to the building would be suicide. Sam could see. Sam has already seen 
 >>>ChangeCampfire(Dusk)
 -The foxes congregate there. That's what they say, but no one dares to burn it down. She moves into the snowy banks. The frigid air is reducing her arms and legs to pins and needles, robbing them of any feeling. The blood is starting to freeze on her face.
 
-She walks to the edge of the forest. One more look at Sam and then she steps inside. The blood is still warm on her body and skin and tendrils of smoke twist from her like tails.Better Sam be free of her. Better she be free of this world. 
+She walks to the edge of the forest. One more look at Sam and then she steps inside. Better Sam be free of her. Better she be free of this world. 
 
 If she's going to die, if she's been found out, it's better she go away. She's lucky she's the one to decide.
 
@@ -1816,7 +1813,7 @@ She stops, pausing at the end of a hallway to see a giant, bulbed mirror reflect
 
 -An alarm blares. She has to move faster. Forget her limp and the pain and that she ought not to run in the hallways. She sprints, faster than she ever has before and bursts out into the night.
 
-The blood is still warm on her body and skin and tendrils of smoke twist from her like tails.
+The blood is still warm on her skin and tendrils of smoke twist from her like tails.
 
 The night is pitch black, but it's easier to see than it should be. She is wearing a short-sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
 
@@ -1830,13 +1827,11 @@ She grits her teeth, panicked, excited.
 
 Why did Sam have to come. 
 
-//feel like we need an 'if sam' here but maybe not?
-
 Stay back, she wants to shout. But her feet move towards them. There's mild alarm on Sam's face. Run, Sam. Run.
 
 Sam doesn't run. Even when there are shouts in the night and the floodlights come on, blinding her. 
 
-* There are orders. She knows what orders mean. s
+* There are orders. She knows what orders mean. 
 
 -She tackles Sam into a bank of snow. 
 
@@ -1923,7 +1918,7 @@ Behind her there's a commotion.
 
 -An alarm blares. She has to move faster. She sprints, faster than she ever has before and bursts out into the night.
 
-The blood on her is still warm, smokes in the night.
+The blood is still warm on her skin and tendrils of smoke twist from her like tails.
 
 It's easier to see than it should be. She is wearing a short-sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
 
@@ -2011,7 +2006,7 @@ Behind her there's a commotion.
 
 She has to move faster. She sprints, faster than she ever has before and bursts out into the night.
 
-The blood on her is still warm, smokes in the night.
+The blood is still warm on her skin and tendrils of smoke twist from her like tails.
 
 It's easier to see than it should be. She is wearing a short-sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
 
