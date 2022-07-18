@@ -55,7 +55,7 @@ VAR footprints_discovered = false
 Title: Visitor
 Author: Gloomy
 
-Description:
+Description: A woman comes home to find two envelopes waiting for her.
 TW: Graphic Violence, Gore, animal cruelty, stalking, suicidal ideation, body horror, cannibalism.
 Time: 20-40 minutes (for all choices)
 
@@ -83,11 +83,11 @@ And yet she wishes to be away from the threat of the outside world.
 
 First, her inspections:
 
-The mat on the doorstep appears intact. She stoops to look more closely. It does not appear out of place.
+The mat on the doorstep seems intact. She stoops to look more closely. It does not appear out of place.
 
 She rises again and faces the door. She relaxes her hand and the keys slip loose from her fingers. She inserts the key and unlocks the door.
 
-She will not allow the door to swing open. Instead, she is careful, turning the doorknob with precision, not letting go until she is sufficiently inside her apartment. -> enterapt
+She will not allow the door to swing open. Instead, she is careful, turning the doorknob with precision, eyes scanning her surroundings. She sights no danger but does not release the doorknob until she is sufficiently inside her apartment. -> enterapt
 
 =enterapt
 
@@ -95,7 +95,7 @@ Everything is immaculate and white: blinding nothingness.
 
 * There is nothing neither pleasant nor unpleasant in the air.
 
--She closes the door behind her, latching the chain, turning the bolt and the small one on the doorknob. Air seeps into her and she exhales softly.
+-She closes the door behind her, latching the chain, turning the bolt, and the small lock on the doorknob. Air seeps into her and she exhales softly.
 
 >>>PlaySound(Lock)
 
@@ -122,7 +122,7 @@ She sighs and opens the letter.
 
 Dear Resident,
 
-It has come to our attention that some tenants have been locking their apartments. As a reminder, this is not permitted. Our maintenance crew will be doing required inspections to ensure everything is in order. Make sure to leave doors unlocked at all times. Thank you for your cooperation.
+It has come to our attention that some tenants have been locking their apartments. As a reminder, this is not permitted. Our maintenance crew will be conducting required inspections to ensure everything is in order. Make sure to leave doors unlocked at all times. Thank you for your cooperation.
 
 Sincerely,
 
@@ -149,11 +149,11 @@ She sets the envelope in a mail holder.
 >>>PlaySound(Lock)
 For moments she is frozen. 
 
-Anger and disappointment bubbles inside of her. She is grateful for that. Those are better than fear. She thinks they might be stronger.
+Anger and disappointment bubble inside her. She is grateful for that. Better anger than fear. So the world says.
 
 She unlocks everything: the lock on the doorknob, the deadbolt, the chain. 
 
-Every safety measure is stripped. She isn’t sure she can do this.
+Every safety measure is stripped. She isn't sure she can do this.
 
 *[Keep door unlocked and continue inside.] ->continue_inside
 
@@ -180,7 +180,7 @@ If there is an argument she can try to explain. She can hope they will be unders
 
 === continue_inside ===
 
-She continues inside.
+She continues inside. 
 
 The snow is melting off her.
 
@@ -205,13 +205,13 @@ She must look away. She looks away. First, something to temper the occasion.
 
 = tea 
 
-She looks through the cabinet at the assortment of teas, loose and clearly labeled by hand. 
+She looks through the assortment of teas in the cabinet, loose and clearly labeled by hand. 
 
-There’s white tea. Black tea. Green tea. Which one? The leaves make her nostalgic. Tea has always brought her comfort, especially on the bitter cold nights.
+There's white tea. Black tea. Green tea. Which one? The leaves make her nostalgic. Tea has always brought her comfort, especially on the bitter cold nights.
 
 She picks one at random but the thought of collecting water makes her feel violently ill. She returns the tea to the cabinet.
 
-She’ll just have to muddle through on her own.
+She'll just have to muddle through on her own.
 
 * [Open letter] -> open_letter
 
@@ -248,7 +248,7 @@ She steps down carefully, bottle in hand. She considers a glass and decides agai
 
 She examines the envelope. It's deceptively soft. She turns it over in her hands. There are no creases or bends. No errant ink or markings from oily fingers.  It's as if it manifested on the table out of thin air.
 
-She stands, retrieves her letter opener, and opens the envelope carefully. //noise:paperripping// is there a typewriter in her apartment
+She stands, retrieves her letter opener, and opens the envelope carefully. 
 
 There is a single page inside, folded three times, the edges crisp. The paper is thin and nearly translucent. 
 
@@ -270,9 +270,9 @@ She takes a long, slow breath and swallows, unfolding the letter.
 
 >>>PlaySound(Heartbeat)
 
--Something hard that will burn her insides. But there’s nothing. The thought of drinking anything repulses her. 
+-Something hard that will burn her insides. But there's nothing. The thought of drinking anything repulses her. 
 
-* [Look out the window] //this will point to snow and fresh tracks outside the window
+* [Look out the window] 
 -> look_out_window
 
 * [Look at the door] 
@@ -282,7 +282,6 @@ She takes a long, slow breath and swallows, unfolding the letter.
 -> its_fine
 
 = look_out_window
-//this if doors were locked
 >>>PlaySound(Heartbeat)
 
 She rises from the chair, letter still in hand. She goes to the window. Her bed rests against the wall. She stares at it, searching for a wrinkle that wasn't there before. It was stupid of her. She should have checked the moment she arrived. 
@@ -297,11 +296,9 @@ She breathes, closes her eyes now, falling back onto the bed.
 
 = look_at_door
 
-//if/ or variables needed here
 
-//ifdoorlocked
 
-She's glad she locked the door. She's made a vow to her, whether consciously or not, to never let another in. But people are persuasive. Locks are made of iron and steel. Surely that is stronger than her determination.
+She's glad she locked the door. She's made a vow to herself, whether consciously or not, to never let another in. But people are persuasive. Locks are made of iron and steel. Surely that is stronger than her determination.
 
 She settles on the bed.
 
@@ -313,7 +310,7 @@ She settles on the bed.
 
 ~ raise (afraid)
 
-She's imagining it. It's just the cold and hysteria.  She's blowing it out of proportion. She mentally chants their mantra. She's not afraid. She's not afraid. She's not afraid. She's not afraid. She's not afraid.
+She's imagining it. It's just the cold and hysteria. She's blowing it out of proportion. She mentally chants their mantra. She's not afraid. She's not afraid. She's not afraid. She's not afraid. She's not afraid.
 
 -> phone
 
@@ -360,7 +357,7 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
     
      She doesn't lift her sleeve to look at her arm. She has avoided looking or thinking about it. It's warm and pulsing.
      
-     She picks up the phone receiver. Instead of a dialtone she finds crackling static on the other end of the line. 
+     She picks up the phone receiver. Instead of a dial tone she finds crackling static on the other end of the line. 
      A moment later she receives the customary dial tone.
      
      She enters Sam's number. She knows it by heart. Her fingers turn the dial, each number whirring back to zero each time. It rings. And rings. A hard thud from the right side of the room. She's ready to hang up when the call is picked up. Sam's voice is on the other end, tentative.
@@ -397,11 +394,9 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         
         A tsk. "They're rounding them up, you know."
         
-   * [Oh. That again.] -> thatagain
+   * [Oh. That again.] 
    
-   =thatagain
-        
-        She says nothing right away, only feels her throat grow tighter. "I feel bad for them."
+    -She says nothing right away, only feels her throat grow tighter. "I feel bad for them."
         
         "They're not safe. I'm surprised they let it go this far."
         
@@ -409,11 +404,9 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         
         "It's their fault we're locked up like this," Sam continues.
        
-      * [A lot of people believe that.] -> doesntagree
-       
-       =doesntagree
-        
-    She rubs her neck but doesn't say she doesn't agree. 
+      * [A lot of people believe that.] 
+      
+      -She rubs her neck but doesn't say she doesn't agree. 
         
         "Are you feeling okay?"
         
@@ -455,19 +448,15 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         
         It's been months since they've seen one another. She enjoyed their last time together but can't seem to bring it up. It'd be easier to think if not for the pounding headache. Sam hasn't brought it up either so maybe it meant nothing.
         
-        * [Brush it off.] ->brushoff
+        * [Brush it off.] 
         
-        =brushoff
-        
-        "It's okay," she says. The snow is bad. The cold is biting. The wardens are mean. She could say all those things but her mouth won't cooperate.
+        -"It's okay," she says. The snow is bad. The cold is biting. The wardens are mean. She could say all those things but her mouth won't cooperate.
         
         An awkward silence follows before Sam speaks again. "There's talk of pyres burning late into the night over there."
         
-      * ["Pyres?"] -> pyres
-      =pyres
-      <>
+      * ["Pyres?"] 
         
-        "I hadn't noticed." 
+        -"I hadn't noticed." 
         
        Sam scoffs. "You don't usually go out."
         
@@ -475,11 +464,9 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         
         "Radio chatter. You know."
         
-        * [She hates this.] -> hatesthis
+        * [She hates this.] 
         
-        =hatesthis
-        
-        She lowers her voice. "You have to be careful with that. I've told you before. Please get rid of that thing." She's seen the contraption. Some metal box with wires and lightbulbs, always swiftly stowed away when there are inspections.
+        -She lowers her voice. "You have to be careful with that. I've told you before. Please get rid of that thing." She's seen the contraption. Some metal box with wires and lightbulbs, always swiftly stowed away when there are inspections.
         
         "How else would we know what's going on?"
         
@@ -510,7 +497,7 @@ She rubs her eyes feeling her arm throb anew. She resists the urge to look at it
         
         "It's something you get used to."
         
-        "I don't <i>want</i> to get used to it."
+        "I don't want to get used to it."
         
         -> callcontinued
         
@@ -1455,7 +1442,7 @@ She's without shoes, without a jacket and it's snowing.
 
 * She won't last long in this. 
 
--The night is pitch black, but it's easier to see than it should be. She is wearing a short sleeved shirt. Her bite is exposed. If someone sees her she's done for.
+-The night is pitch black, but it's easier to see than it should be. She is wearing a short-sleeved shirt. Her bite is exposed. If someone sees her she's done for.
 
 The door to the building bursts open. The creature has escaped the wardens. It sets its sights on her.
 
@@ -1831,7 +1818,7 @@ She stops, pausing at the end of a hallway to see a giant, bulbed mirror reflect
 
 The blood is still warm on her body and skin and tendrils of smoke twist from her like tails.
 
-The night is pitch black, but it's easier to see than it should be. She is wearing a short sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
+The night is pitch black, but it's easier to see than it should be. She is wearing a short-sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
 
 *In the distance she sees Sam on a payphone.
 
@@ -1938,7 +1925,7 @@ Behind her there's a commotion.
 
 The blood on her is still warm, smokes in the night.
 
-It's easier to see than it should be. She is wearing a short sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
+It's easier to see than it should be. She is wearing a short-sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
 
 In the distance she sees Sam on a payphone.
 
@@ -2026,7 +2013,7 @@ She has to move faster. She sprints, faster than she ever has before and bursts 
 
 The blood on her is still warm, smokes in the night.
 
-It's easier to see than it should be. She is wearing a short sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
+It's easier to see than it should be. She is wearing a short-sleeved shirt. Her bite is bared. Her teeth are bared. Her fingers have curled into claws.
 
 *In the distance she sees Sam on a payphone.
 
@@ -2036,12 +2023,9 @@ Sam looks at her and starts trotting in her direction.
 
 She grits her teeth, panicked, excited.
 
-* Why did Sam have to come. -> why_did_sam_come2
-=why_did_sam_come2
+* Why did Sam have to come. 
 
-//feel like we need an 'if sam' here but maybe not?
-
-Stay back, she wants to shout. But her feet move towards them. There's mild alarm on Sam's face. Run, Sam. Run.
+-Stay back, she wants to shout. But her feet move towards them. There's mild alarm on Sam's face. Run, Sam. Run.
 
 Sam doesn't run. Even when there are shouts in the night and the floodlights come on. There are orders. She knows what orders mean.
 
@@ -2083,7 +2067,7 @@ Bullets pop in the night. She glances back. There are screams everywhere.
 ->DONE
 
 =noknifefear
-//variable here should also tie to Sam's call but oops 
+
 If only she had a weapon. All she has is fear. She races to the kitchen for a knife but she's disoriented. There are voices all around her, too far, too close to be real and only one force, masked in her own face heading towards her. 
 
 She arrives at the kitchen counter, sees the knife block, reaches for it but is grabbed and hurled across the room before she can reach it.

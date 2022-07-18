@@ -11,7 +11,7 @@ VAR takeout = ""
 === function set_channel_vars(ref x)
     { x:
         - FANDOM:
-            ~ channelname = "FanDoom"
+            ~ channelname = "FanDoom Scrollers"
             ~ fanname = "fandoomers"
             ~ nickname = "Dr. FanDoom"
             ~ growledname = "FaaaaaaaaanDoooooom..."
@@ -19,7 +19,7 @@ VAR takeout = ""
             ~ channelname = "CryptidsNotCrypto"
             ~ fanname = "chupacompadres"
             ~ nickname = "Crypty"
-            ~ growledname = "Cryyyyyyyyyyptids..."
+            ~ growledname = "Cryyyyyyyyyyptyyyyy..."
         - MOVIES:
             ~ channelname = "Netflix and Chill the Fuck Out"
             ~ fanname = "Netflix-and-chillers"
@@ -32,11 +32,11 @@ VAR takeout = ""
 Title: No Such Thing as an Alpha
 Author: Ghost Clown
 
-Description: When a YouTuber makes a harmles joke about an "alpha male" streamer
+Description: When a YouTuber makes a harmles joke about an "alpha male" streamer, things go worse than she could have imagined...
 
 CW: Stalking, violence, misogyny
 
-Time: 15 minutes
+Time: 15
 
 -> DONE
 
@@ -76,12 +76,14 @@ That's right. And she was just starting on a new video...
 -> END
 
 = fandom_drama
-* "I hope you're already for a bonkers-wild thrill ride[..."], because today, we're talking about the Omegaverse community! For those of you who are unfamiliar... boy, are you in for a treat. A horrible, horrible treat.
+* "I hope you're already for a bonkers-wild thrill ride[..."], because today, we're talking about the Omegaverse community! For those of you who are unfamiliar... boy, are you in for a treat. 
+
+    **A horrible, horrible treat.[.."]
     
     "To summarize a very long story, the Omegaverse is a community-created ficitonal universe where human biology is a little bit... different. Characters in these stories go into heat as though they were canines - those are omegas. Some characters are 'alphas,' who find an omega's heat irresistable, and there are also 'betas' who... are also there, I guess?
     
     "The whole thing is loosely based on the idea of a wolf pack, and unfortunately for everyone, we'll have some more wolfy bits to get through before all of this is over. 
-    ** "But while we're talking about wolves...["]
+    *** "But while we're talking about wolves...["]
         -> after_video
 
 = cryptids
@@ -111,7 +113,7 @@ That's right. And she was just starting on a new video...
 
 == after_video
 "There's no such thing as an alpha wolf.
-"Seriously! Did you know that? The original wolf study where that term was coined had been performed under really artificial conditions, and the researcher spent the rest of his career trying to retract his findings. Under normal cirucmstances, wolves  live in loving family packs -- sorry-not-sorry, Mark Territory."
+"Seriously! Did you know that? The original wolf study where that term was coined had been performed under really artificial conditions, and the researcher spent the rest of his career trying to retract his findings. Under normal cirucmstances, wolves  live in loving family packs — sorry-not-sorry, Mark Territory."
 
 * [Mark Territory?] 
 >>>HideImageRight()
@@ -130,7 +132,7 @@ The next morning, the YouTuber woke up to her sleep app's alarm screeching at he
 
 When the YouTuber woke up the next day, she found her phone flooded with notifications. There were emails, DMs, even a missed call from her best friend. Feeling overwhelmed, she hardly knew where to start...
 
-* [Return that call.] ->phoneafriend
+* [She returned the call.] ->phoneafriend
 
 =phoneafriend
 
@@ -164,14 +166,14 @@ Numbly, the YouTuber opened up her laptop and navigated to Territory's channel. 
 
     ** She watched the video.
     >>>PlayMusic(alpha_guy)
-    >>>PlaySound(ManHowl)
     >>>ChangeCampfire(Lime)
     >>>ShowImageLeft(Guy)
     
-    "AWOOOO! I'm Mark Territory, and this is the Alpha Pack -- the only pack where every wolf is an alpha."
+    "AWOOOO! I'm Mark Territory, and this is the Alpha Pack — the only pack where every wolf is an alpha."
     
     *** The YouTuber rolled her eyes.
-    
+    >>>ShowImageRight(Girl)
+
     "A lot of you guys have brought to my attention a call-out from this make-up channel, {channelname}. Never heard of it! But let's watch and find out!"
     
     The YouTuber watched as her own video filled the screen. Territory's smug, green-screened face sat in one corner, and a rapidly-scrolling chat window filled the entire right-hand side.
@@ -189,7 +191,7 @@ Numbly, the YouTuber opened up her laptop and navigated to Territory's channel. 
         
         The chat window quickly filled with numbers.
         
-        "Looks like we're seeing a lot of 8s. So now we know why anybody would watch this. This girl could be talking about paint drying and she'd still be crawling with simps. But I guarantee you, if I brought it back to the beginning of the video, before the makeup went on, those numbers would be cut in half. This is what females do -- disguse themselves as something they aren't.
+        "Looks like we're seeing a lot of 8s. So now we know why anybody would watch this. This girl could be talking about paint drying and she'd still be crawling with simps. But I guarantee you, if I brought it back to the beginning of the video, before the makeup went on, those numbers would be cut in half. This is what females do — disguse themselves as something they aren't.
         "Personally, I think she overdid it. This isn't your normal, everyday makeup. It's attention-seeking makeup. What do I always say? If your woman is wearing too much makeup, she's cheating."
 
 ***** [Stop watching]->pausevideo
@@ -197,8 +199,9 @@ Numbly, the YouTuber opened up her laptop and navigated to Territory's channel. 
 
 =pausevideo
 >>>HideImageLeft()
+>>>HideImageRight()
 >>>ResetCampfire()
->>>PlayMusic(campfire)
+>>>PlayMusic()
 
 Disgusted, the YouTuber stopped the video.
 
@@ -253,7 +256,6 @@ The YouTuber looked at her still-growing DM count. Mystery solved.
 
 
 == nowayjose
->>>PlayMusic(alpha_girl)
 "Good. Hey, I've got to go, but take care of yourself, okay? Let me know if you need to get out of the house for a while."
 
 "Sure. Thanks."
@@ -262,7 +264,7 @@ She set down the phone, took a deep breath, and set about cleaning up her social
 
 -(social_media_cleanup)
 * [Go through DMs] 
-    First, her DMs. She started with Twitter, and clicked the first notification-- 
+    First, her DMs. She started with Twitter, and clicked the first notification— 
 
     "I'M GOING TO KILL YOU"
     
@@ -296,7 +298,7 @@ She set down the phone, took a deep breath, and set about cleaning up her social
 
 * [Check on Discord]
 
-    The Discord, thankfully, had volunteer mods who did a fantastic job of weeding out ne'er-do-wells, and the YouTuber was deeply relieved to see that they were on top of banning brigaders. However, they did ask her help with one thing -- to address the debate going on in general chat.
+    The Discord, thankfully, had volunteer mods who did a fantastic job of weeding out ne'er-do-wells, and the YouTuber was deeply relieved to see that they were on top of banning brigaders. However, they did ask her help with one thing — to address the debate going on in general chat.
     
     What she found was a heated argument about whether she should collab with Mark Territory at VidCon and "own" him. Familiar, normally well-behaved posters were up in arms.
     
@@ -318,6 +320,7 @@ Now that she'd done some damage control, she psyched herself up for what needed 
 =makeastatement
 >>>ShowImageRight(Girl)
 >>>ChangeCampfire(Sky)
+>>>PlayMusic(alpha_girl)
 
 She needed to make a statement, and quickly. She shoveled down a bowl of cereal, took a long shower, made herself presentable, and turned on the camera.
 
@@ -392,13 +395,15 @@ She needed to take a break, but before she did, there was one last matter to att
 *** [She would make another video] ->anothervideo
 
 ==emailmt
->>>PlayMusic(alpha_guy)
+>>>HideImageRight()
 The YouTuber knew that this was exactly what he wanted. She knew the conversation would be unpleasant. But she also knew that Territory's pathetic cronies weren't about to listen to anyone else. Besides, she wasn't about to duck her head and let them harass her without standing up for herself. She composed an email with documented evidence of her doxxing and a polite but firm request for him to speak to his fan base.
 It took three more emails, one including a hollow legal threat, before he finally agreed to address his fans. 
 * He had a Short up within minutes.
-"What's up, Pack? Just thought I'd let you know, it's come to my attention that allegedly, Little Miss 'No Such Thing as an Alpha' has been doxxed. And I thought it might be time for a healthy reminder: She's not worth it.
+    >>>PlayMusic(alpha_guy)
+    >>>ShowImageLeft(Guy)
+    "What's up, Pack? Just thought I'd let you know, it's come to my attention that allegedly, Little Miss 'No Such Thing as an Alpha' has been doxxed. And I thought it might be time for a healthy reminder: She's not worth it.
 ** "Besides, we'll be seeing her at VidCon soon enough."
->>>PlayMusic(alpha_girl)
+    >>>HideImageLeft()
 
 ->continue
 ==anothervideo
@@ -418,6 +423,7 @@ The YouTuber knew that dealing with Territory directly was only giving him what 
 ==continue
 >>>HideImageRight()
 >>>ResetCampfire()
+>>>PlayMusic(campfire)
 
 Once things were about as resolved as they could be, the YouTuber treated herself to a nice scream into a pillow and put in an order for some takeout, in that order.
 
@@ -463,16 +469,20 @@ It wasn't her tasty dinner's chauffer that caught her eye, however. Instead, she
     
     The threat didn't seem to deter him. He kept pounding on the door, howling like a lunatic.
     
-    ** Boom.
+    ** [Boom.]
+        Boom.
         >>>PlaySound(Knock)
 
-        *** "Awwwoooo."
+        *** ["Awwwoooo."]
+            "Awwwooooooooooooooooooooooo."
             >>>PlaySound(ManHowl)
             >>>ChangeCampfire(Dusk)
         
-            **** BOOM.
+            **** [BOOM.]
+                "BOOM."
                 >>>PlaySound(Knock)
-                ***** "AAAAAAAAWWOOOOOOOOOOOOOOOOOOOO!"
+                ***** ["AAAAAAAAWWOOOOOOOOOOOOOOOOOOOO!"]
+                    "AAAAAAAAWWOOOOOOOOOOOOOOOOOOOO!"
                     >>>PlaySound(ManHowl)
                     >>>ChangeCampfire(Night)
         
@@ -528,7 +538,7 @@ It wasn't her tasty dinner's chauffer that caught her eye, however. Instead, she
 >>>PlaySound(ManFootsteps)
 
 * He waltzed right up to her, followed by a cameraman.
-    "Hey hey, there she is! It's -- what was her name again?"
+    "Hey hey, there she is! It's — what was her name again?"
     He turned to the cameraman, who shrugged.
     "Whatever. What do you have to say for the Alpha Pack?"
     He shoved a microphone into her face.
@@ -618,7 +628,7 @@ The harpy ate until she was full, then flapped away into the night.
 
 * She summoned a storm wind[.], raising a clawed hand to the sky. With a flick of her wrist, a gale slammed into the werewolf, sending him flying into a brick wall. He had barely stumbled to his paws when it struck again, shooting him straight into the building on the opposite side of the street.
 Blood trickled from his ears. The actual blows might not have incapacitated him, but his eardrums had ruptured from the changes in pressure, and that left him completely at the harpy's mercy.
-Unfortunately for him, she was all out of mercy. She leapt onto his back, grabbing him by the scruff of the neck, and began to flap her wings. As they rose into the air, he thrashed and sputtered. Threats turned into pleas turned into incoherent growls and grumbles. But it was too late for any of it. Once the harpy hit a certain height -- about seven stories up, the same height as a neighboring building -- she dropped him.
+Unfortunately for him, she was all out of mercy. She leapt onto his back, grabbing him by the scruff of the neck, and began to flap her wings. As they rose into the air, he thrashed and sputtered. Threats turned into pleas turned into incoherent growls and grumbles. But it was too late for any of it. Once the harpy hit a certain height — about seven stories up, the same height as a neighboring building — she dropped him.
 The wolf's final howl was cut short with a crack as he hit the pavement. His form began to shrink, transforming back into that of a human.
     ~ ending = DROPPED
 
@@ -635,7 +645,7 @@ The werewolf stepped back.
 The elder goddess did not answer.
 
 * [She reached forth with her tendrils.] 
-    The emerging tendrils extended in unison,  snagging the wolf by his wrists, ankles, neck -- anywhere they could coil around. He snapped and clawed at them, but his attacks passed right through them -- after all, they were only strands of shadow.
+    The emerging tendrils extended in unison,  snagging the wolf by his wrists, ankles, neck — anywhere they could coil around. He snapped and clawed at them, but his attacks passed right through them — after all, they were only strands of shadow.
     Soon he was completely engulfed in the black, twisting mass. His increasingly terrified howls became lost in the void that surrounded him.
     The tendrils tightened, and then he was simply gone, lost within a world of infinite darkness.
     
@@ -681,7 +691,7 @@ She didn't answer.
     
     The wolf snarled and dove for her jugular, but all he got was a mouthful of goo. He opened and closed his jaws, trying to spit it out, but the motion only accellerated its adhesion to the inside of his mouth, and shortly he could no longer open his mouth at all.
     With a furious grunt, he swiped at her, but his claw met a similar fate to his muzzle, captured in the goo and stuck to her side. He tried to pull it away, only succeeding in getting his other claw stuck.
-    Now that he was good and stuck, the kelpie began to gallop, dragging the werewolf along with her. Instinct drove her to the nearest body of water deep enough to drown someone -- a swimming pool. She dove in with the werewolf in tow, straight to the bottom of the deep end. Even at the bottom of a pool, the large beast was almost large enough for his muzzle to reach the surface -- almost.
+    Now that he was good and stuck, the kelpie began to gallop, dragging the werewolf along with her. Instinct drove her to the nearest body of water deep enough to drown someone — a swimming pool. She dove in with the werewolf in tow, straight to the bottom of the deep end. Even at the bottom of a pool, the large beast was almost large enough for his muzzle to reach the surface — almost.
     He thrashed and burbled, desperately trying to pull away from the kelpie, but eventually his movement ceased. By the time his body floated to the top of the pool, he was no longer a wolf. He was a human... and a corpse.
     
     ** The kelpie exited the pool and galloped away.
@@ -694,7 +704,7 @@ She didn't answer.
 >>>HideImageLeft
 >>>ResetCampfire()
 >>>ShowImageRight(Girl)
->>>PlaySound(alpha_girl)
+>>>PlayMusic(alpha_girl)
 
 The next day, the YouTuber returned to the con, continuing right where she had left off. 
 
@@ -702,7 +712,7 @@ Early in the day, another creator approached the YouTuber. They had bonded yeste
 
 * "No... what happened?"
 
-{ending == ANIMAL: "They found him dead. Get this -- they think it was a stray wolf."}
+{ending == ANIMAL: "They found him dead. Get this — they think it was a stray wolf."}
 {ending == BEATEN: "He was murdered last night. Beaten to death. Some kind of gang activity, they think."}
 {ending == DROWNED: "He's dead. He crashed a private pool and drowned in it."}
 {ending == DROPPED: "He's dead. Apparantly he jumped off a building in the middle of the night. Can you believe it?"}

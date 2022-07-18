@@ -10,8 +10,6 @@
 		}
 	],
 	"TargetPlatforms": [
-		"WindowsNoEditor",
-		"MacNoEditor",
-		"IOS"
+		"WindowsNoEditor"
 	]
 }

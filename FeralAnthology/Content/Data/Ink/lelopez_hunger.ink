@@ -51,13 +51,16 @@ VAR mice_eaten = false //MIGHT CUT
     }
 
 === function day_end_check
+
 ~day++
 ~hunger++
 ~c_hunger++
 
-{beastly == true:
+/*
+{beastly == true: 
 ~hunger++
 }
+*/
 
 === function starvation(x)
     {x == wd_episodes.starve1:
@@ -160,14 +163,14 @@ VAR mice_eaten = false //MIGHT CUT
 ->header
 
 ==header== 
-Title: Hunger Something Something Meat Scary Timez
+Title: Hunger
 
 Author: Luis Enrique Lopez
 
 Description: A young, penny-starved man takes on a simple job that may cost him more than he has. 
 
 TW: Gore, Body Horror, Eating Disorder/Starvation, Animal Cruelty, Isolation
-Time: Who knows
+Playtime: Who knows
     +[Begin]
     ->start
 */
@@ -362,23 +365,12 @@ He snorted and wondered why they wrote this at all. There was no way he'd mess u
     ->feed_pet_firsttime
     
     *[The taste of that meat.]
+    ~PC_meat_eaten()
     ->meat_firsttime
     
     *{day1.pet_first} [{|Nothing.|}] Oscar just left. He {believed|felt|thought|decided} that this was enough for now.
     ->first_day_end
     
-/*
-He prayed there was something down there that would eat this meal.
-
-A heavy and putrid warmth hugged Oscar's wrist. <>
-    
-    -He felt the fat from the provision leak between his fingers. The tails of oil left a tingle where they ran. Oscar shuddered in one more breath.
-    
-     The dragging didn't sound closer, it was just there. Singing in place.
-     
-     He was a statue with senses focused on the touch.
-    
-*/    
     =feed_pet_firsttime
    He snatched a container of the meat and slammed the door. With glass in hand, he made for the stairs. 
     
@@ -448,7 +440,7 @@ A heavy and putrid warmth hugged Oscar's wrist. <>
     
     After a meditative wash, Oscar laughed about his little freakout.
     ~meat_left--
-    
+    ~c_hunger--
     ->firstbite_loop
     
     =meat_firsttime
@@ -497,10 +489,11 @@ A heavy and putrid warmth hugged Oscar's wrist. <>
 ->day1.first_bite
 
     =first_day_end
-Fatigue engulfed him and laid him out on the bed. He was at ease with the chore entrusted to him. Like anything before, he had to get it done no matter what, and it looked like it wouldn't take much. He just hoped the boredome wouldn't kill him before then.
+    Fatigue engulfed him and laid him out on the bed. He was at ease with the chore entrusted to him. Like anything before, he had to get it done no matter what, and it looked like it wouldn't take much. He just hoped the boredome wouldn't kill him before then.
 
-He was still hungry.
-*He slept.
+    He was still hungry.
+    *He slept.
+    ~day_end_check()
     ->wake_up
 
 
@@ -515,7 +508,7 @@ He was still hungry.
     ->feeding_hour.feed_creature->
     ->feeding_hour.feed
 
-    +{meat_left >=1} {seen_last_turn(-> feeding_hour.meat_choice)} [{{~Curb|Restrain|Ease} his {gastric desire|hunger|starvation}.|{~Listen to|Satify|Comply with} his stomach.| {Get|Acquire|He needs} a {~bite|taste|piece} of that {~grub|food|meat|nourishment}.}]
+    +{meat_left >=1} {seen_last_turn(-> feeding_hour.meat_choice)} [{{~Curb|Restrain|Ease} his {hunger|gastric desire|starvation}.|{~Listen to|Satify|Comply with} his stomach.| {Get|Acquire|He needs} a {~bite|taste|piece} of that {~grub|food|meat|nourishment}.}]
     ~PC_meat_eaten()
     --(meat_choice)
     ->feeding_hour.feed_PC->
@@ -532,17 +525,24 @@ He was still hungry.
     =feed_creature
     {
     -day == 2: 
-    nothing crazy happens
+    He grabs one of the remaining {print_number(meat_left)} containers and hauls it down the stairs. Plopping the portion into hand, he whistled and called the {~pet|cat|dog|hamster} to the door. He readies his arm for the old {~girl|bud} to receive their dinner.
+    *He waited.
+    **And waited.
+    ***Waits.
+    ****And waits longer.
+    *****Once more, a tongue emerges to claim its meal. Slurping away every piece it can find. The scratch of every lick grows a little discomforting after a while, but it's not too much trouble. When done, Oscar avoids contact with his grimy hand and scrubs it clean upstairs.->->
     -day == 3:
-    Don't be a cunt, but kinda weird
-    -c_hunger == 1:
-    kinda antsy
-    -c_hunger == 2:
-    really weird
+    Oscar knew the routine, he headed down.
+    He maneuvers the food from the glass, to his palm, and through the doggy door. A heavy and damp warmth hugged Oscar's wrist. He waited like always. It never stopped feeling like an eternity.
+    *He felt[...] the fat from the provision leak between his fingers. The tails of oil left a tingle where they ran.
+    **He heard[...] dragging slowly make it's way to him.
+    ***It didn't[...] sound closer, it was just there. Singing in place.
+    ****Jowels glided over[...] his hand before the same tongue started its procedure.->->
+    //-c_hunger == 2:really weird (take it out for now.)
     -c_hunger == 3:
-    why the fuck would you do that!!!??!?!?
+    When Oscar goes to feed the creatue, he waits a very short amount of time to illicit a response from it. It was waiting, maw agape to receive its dinner. Oscar feels its teeth and they hold onto him while he avoids not tearing his skin. This hasn't happened before.->-> //He was a statue with senses focused on the touch.
     -else:
-    just hunger, mang. good boy/girl??
+    {~He|The fool|Oscar|The poor man|Our hungry friend's|The struggler|Our impoverished companion} {~grabbed|siezed|stole|snatched|plucked} a {~tray|glass container|puck|patty|wad|slab|lump} and {~took|brought|transferred|rushed|escorted} it {~down below|downstairs|under}. He {~funneled|forced|guided|sent|directed} the {~unit|portion|meal|meat|ingredient|carne} through the {small flap|dog door|hole|fold|pit} and {waited|signaled|called|beckoned|gestured} for the {~dog|cat|old boy|old {girl|gal}|creature|thing|being}. {~As|Like} {~always|usual|before}, the {~pet|beloved companion|animal} goes and licks his hand clean. Oscar {~goes back|ascends} {~upstairs|up the stairs}.
     }
     ->->
 
@@ -560,7 +560,7 @@ He was still hungry.
     }
     -else:
     {shuffle:
-    -He decided he could stand to eat the meat instead of having sleep for dinner. He worthlessly promised that this would be the last time he'd make a grotesque compromise.
+    -He decided he could stand to eat the meat instead of having sleep for dinner. Oscar worthlessly promised that this would be the last time he'd make a grotesque compromise.
     -The crude smell taunted him to retch but he held together all the way down his gullet.
     -Oscar took a bite of the undetermined food. Even if its intensity was somewhat reduced from the cold, a lightly rancid flavor flooded his mouth.
     -He edged on the option to opt out when the slimy patty hit him with a fermented aftertaste. It went down well enough and he tried to huff out the taste.
@@ -591,7 +591,7 @@ He was still hungry.
     ***It would be delicious and[...] he'd get stronger.
     ****[He'd...] He passed out.
     
-    ----Blades forged by famine cut from within his belly and the pain startled him to sobriety. He tried to forget his power trip while he analyzed his surroundings. Oscar tried not to hurl his guts when he cleaned the mess around him.
+    -Blades forged by famine cut from within his belly and the pain startled him to sobriety. He tried to forget his power trip while he analyzed his surroundings. Oscar tried not to hurl his guts when he cleaned the mess around him.
     ->->
     
     
@@ -613,7 +613,7 @@ He was still hungry.
         ->meat_end
     -hunger >= 3 && meat_eaten == false && (!wd_episodes.starve1):
         ->wd_episodes.starve1
-    - (!wd_episodes.starve1) && meat_eaten == true && hunger >= 4:
+    -hunger >= 4 && meat_eaten == true && (!wd_episodes.starve1):
         ->wd_episodes.starve1
     -hunger >= 5 && wd_episodes.starve1 && (!wd_episodes.starve2):
         ->wd_episodes.starve2
@@ -659,30 +659,61 @@ He was still hungry.
     ->DONE
 }
     
-    TODO FINISH below
-    
 ==wd_episodes
 
     =starve1
-    ~starvation(starve1)
-    Oscar had a hard time believing his innards weren't being carved out. His sight did not match the sensation and desparation took hold. Every motion pushed the imaginary tool further in, pulling more out.
-    *He stepped[...] into the living room and a pain exploded from his gut. He was knocked clean off his feet, but he was confident in his solution. 
+    Oscar had a hard time believing his innards weren't being carved out. His sight did'nt match the sensation. Desparation took hold. Every motion pushed the imaginary tool further in, pulling more of him out.
+    *He stepped[...] into the living room and a pain exploded from his gut. He was knocked clean off his feet but was confident in a solution. 
     
-    -His head strained to pair his quarreling vision together, and he dug his fingers into embellished terrain. His palms cramped to follow the floor's etchings to reach the kitchen. The fridge pulled into his view and he slung a hand at the handle.
+    -His head strained to pair his quarreling vision together, and he dug his fingers into the embellished terrain. His palms cramped as he followed the floor's etchings to the kitchen. The fridge pulled into view. He slings a hand around the handle.
     
-    *Another pang of hunger[...] pulled him down. Bewildered, he held his stomach and tried breathing the pain away.
+    *Another pang of hunger[...] pulls him down. Bewildered, he held his stomach, breathing the pain away.
     
     -Oscar took a minute before he launched another hold at the handle and dragged it open. His void bowels threatened to drag him into unconsiousness, but a sterile haze poured over him, leaked into his nostrils, and tightened his skin.
     
     *Oscar took a deep breath[...] and pulled himself up. Agony stretched from his abdomen to his chest. At the top, focus shifted from the ache to his sight.
-    -The {print_number(meat_left)} heinous globs of flesh waited for him. Instinct ordered him to ravage the prey and he hooked two handfuls to start. He poured the meat down his throat to salve the anguish in his core.
+    -The {print_number(meat_left)} obscene globs of flesh waited for him. Instinct ordered him to ravage the prey and he hooked two handfuls to start. He poured the meat down his throat to soften the anguish in his core.
     He hacked and coughed to clear he way down. The saliva too slow to slide everything down, but he consumed more to force it. Oscar inhaled through his nose while he took a minute to will the bulk through.
     *He collapsed[...] into a meditative sprawl which cleared his mind. He felt the hunger deepen, layers of agitation distending from his organs.
     -He just ate, though. He should be okay for a while, right? He strained to stand up and hobbled carefully back to his bed. He'd tell himself he was healthy to achieve rest.
+    ~starvation(starve1)
     ->wake_up
     
     =starve2
-    he just keeps doing it, cuh. he never learns, mane. he didn't eat nothins so he ate even more of the meats. THROWS it up, and can't stop himself from eating it. We don't even know where it comes from.
+    Dogged agony rended outward with gastric cries, piercing all the way up to Oscar's temple. The floor collides with him in his fight to fathom {~the moment|this phenomenon}. His grimacing and wheezing partitioned the pain enough for him hunt the salve to sate his affliction.
+    He flitted in and out of consciousness. Every blink shifting him closer to the reliable storage. Fingers pulling hard enough for bone to nearly push right through skin.
+    *Pull.
+    **Pull...
+    ***He pulled[!] and crashed into something. His brow against the familiar machine.
+    
+    -Gratitude blazed forth a crusade of fingers in pursuit of his voracious desire. Fingertips drew bloody streams up the mechanical mountainside. Cords of flesh unlatching the gate to summon that precious aura of raw and rancid delight. Oscar...
+    
+    *saw[...] the {~glow|light} that {~glimmered|lit} their {~luster|grain|grease}
+    **heard[...] the {static purr|hum} that {~preserved|conserved} his prize
+    ***smelling[...] the {~fetid|foul|malignant} {~miasma|stench|odor} rallying his {~madness|frenzy|ferocity}
+    ****touching[...] the carnal {~texture|beauty|craftsmanship} that would {~breed euphoria|transcend his flesh}
+    *****Taste[...] eluded him.
+    
+    -Acrid deformities merged to rush to their freedom, corroding their escape route. Oscar convulsed in shock as his mouth erupted into a bile-strewn force. Spraying every last remnant he consumed in this unholy butcher's testing grounds.
+    
+    *Weakness[...] interjected a moment of clarity. Veins uncoiled their grasp on his skull.
+    **What was happening?
+    ***Why was he doing this?
+    ****He had to stop.
+    *****Could he stop?
+    
+    -It was only a moment.
+    
+    *Instinct[...] boiled within.
+    
+    -Ravenous greed overthrew reason, demanding the withering human to collect the freshly spewn treasure. His hands cupped the virulent {~flood|soup} dampening his knees.
+    *Excited.[] He drains the {~vomit|puke|soup} from his palms, pouring more onto his lips. Splashing like a child in toxic mud.
+    
+    -It was just fun. He was so tense, so anxious about everything. He could've been having fun the whole time.
+    
+    *He was upset[....] he wasted so much time being a killjoy. Moping around instead mopping up the pool that reached for him. The thing lowered his head and started to lap up the mess.
+    
+    -Lucidity was lost on him. He was beyond the throes of famine.
     ~starvation(starve2)
     {
     -meat_left <= 1:
@@ -717,46 +748,66 @@ He was still hungry.
     *He got[...] out of bed and headed to the kitchen.->->
         
     -Teeth potruded out from his ribs and into abdomen. Oscar stroked the rows until his whole hand plunged into the cavity.
-        *[Enamel crushed his...]Eyes flashed open and breath raced into him. He caught it and relaxed, but didn't feel like he slept at all.->->
-    -Distant clattering shook Oscar awake and he began filtering possibilities as he headed to the source. Pinpricks flew up his back in his search for an encounter.
-        Strips of wilted, red grime painted on the kitchen floor led to an exposed container of meat. It laid untouched
+        *[Enamel crushed his...]Eyes flashed open while he struggled for air. He caught it and relaxed, but didn't feel like he slept at all.->->
+    -Distant clattering shook Oscar awake and he began to filter possibilities as he headed to the source. Pinpricks flew up his back in his search for an encounter.
+        Strips of wilted, red grime painted on the kitchen floor led to an exposed container of meat. It laid untouched.
         *Oscar scooped[...] the sustenance back into the fridge. The unseen needles continued their dancing on the stage of his spine.->->
     -Tendons extended at the risk of tearing from his hand. His shoulder started to ease out of socket...
-        *and he fell[...] to his knees. Oscar blinked into consciousness and found his grip clawed around the refrigerator handle. Cold ran through him as he untucked each finger from the door.->->
+        *and he fell[...] to his knees. Oscar blinked into consciousness and found his grip clawed around the refrigerator handle. Shivering aches ran through his shoulder as he untucked each finger from the door.->->
     -Oscar's head throbbed him out of sleep.
         *He needed something[...] to eat. He hoped this ordeal would end soon.->->
     }
 
 TODO finish the stuff below lol
-/*
-   -wu_episodes.ate_rat:
-    If Oscar really had eaten a rat, it didn't do much to fight off the ravenous waves inside of him.
-    -wu_episodes.ate_nails:
-    Every movement of his fingers translated to tiny aches at the tips.
-    -wu_episodes.ate_fingers:
-    Our starving friend struggled to believe his finger was gone. The emptiness never stopped reminding him of how much pain it was in.
-    -else:
-*/
+
 ==wu_episodes
 
     =ate_rat
-    damn, the character ate a whole-ass rat.// if meat = false then !hunger--, but if meat = true then hunger--
-    *Isn't that crazies?
-    ->wake_up
+    {meat_eaten == true:
+    ~hunger--
+    }
+    Oscar felt a soft tickle ease him into consciousness. He went to the sink to spit out the unknown piece. A fuzzy pressure had gotten trapped between two of his teeth.
+    
+    *He pinched[...] the bit and started to pull a string until it became taut.
+    
+    -His nerves worked their noise in question of the entity stroking his gums. He readied his nails to fish out the strand.
+    
+    *He dug[...] around squeezing and tugging until resistance signaled a catch.
+    
+    -He clamped his fingertips around it and pried until the gap between his teeth was empty again.
+    He held up a hair that was anchored by a shaggy speck of gore. His composure shatters as he flings the remains in the sink. He retched until anxiety rooted in him, but he forced himself to run the faucet. The panic washed away when he filled his mouth and spat out the lingering feel where the scrap had been. He would be fine. He's ok. He dispelled a shaky sigh.
+   
+    Oscar thought to himself, if he really had eaten a rat, it didn't do much to fight off the ravenous waves inside of him.
+    ->feeding_hour
 
     =ate_nails
-    this fool gets so hungry that he eats his own nails in his sleeps. this foo didn't even know it, mane.
-    *Damn, that hurts
-    ->wake_up
+    Chills hammered away on Oscar until he awoke. The sensivity came from his hands and an ache rose along with his awareness. Attempting to pull the covers off, he winced from the stabbing in his fingertips. He carefully slid this hands out from under the linens.
+    *Mangled cuticles[...] frayed around the flayed skin. An arbitrary number of his fingers were red where nails used to be. The stagnant air raided the uncovered nerves.
+    
+    -Oscar ran to the bathroom to wash off the blood and flinching until his fingers acclimated to the steady flow. In his wait, he felt a poke in the back of his throat.
+    *He reached with his tongue[...] but it was too far back.
+    **Tilting his head[...] he forced his tongue to reach farther but felt a cramp coming.
+    ***He took a[...] damaged finger and delved for the fragment. Squirming from the minor bouts of pain.
+    -He saw the peeled skin stuck to a nail and distress endangered his sanity. A migraine paralyzed his face into a static pain. His breath raced but he resolved to control that first. It was the last thing he had control of and he steadied it. Red-faced, he felt reservoirs fill from the corner of his eyes.
+    *He shook[...] his head and committed to patch up his injury. He had no explanation for this, but he had to do what he needed. He was already here.
+    He finished up.
+    
+    -Every movement of his fingers translated to tiny aches at the tips.
+    ->feeding_hour
 
     =ate_fingers
     holy moly, Oscar really trying too hard to not eat and stuff. wow, what a legend. too bad now he ate a couple of fingers and has to live without 'em.
     *OOF! That's a roughy.
-    ->wake_up
+    Our starving friend struggled to believe his finger was gone. The gap between his fingers never stopped reminding him of how much pain it was in.
+    ->feeding_hour
 
 TODO endiiiiiiiiiings these are super important
 ==endhub
     {
+    -meat_left > 0:
+    ->wake_up
+    -c_hunger >= 4:
+    ->creature_end
     -PC_meat >=9:
     ->meat_end
     -else:
